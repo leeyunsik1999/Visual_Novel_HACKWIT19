@@ -3,9 +3,23 @@
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 public class slowPrint {
+	
+	private static BooleanProperty readyForInput = new SimpleBooleanProperty(false);
+	
 	public static void ln(String sentence) throws InterruptedException {
 		char[] characters = sentence.toCharArray();
 		
@@ -25,13 +39,13 @@ public class slowPrint {
 		}
 	}
 	
-	public static void autoFormat(String sentence, Text textbox, int delay, int maxSentenceLength) throws InterruptedException{
+	public static void autoFormat(String sentence, TextArea textbox,ScrollPane scrollyBoi, int delay, int maxSentenceLength) throws InterruptedException{
 		textbox.setText("");
 		ArrayList<String> words = new ArrayList<String>();
 		int wordStartIndex = 0;
 		for(int i = 0; i < sentence.length(); i++) {
 			if(sentence.charAt(i) == ' ') {
-				words.add(sentence.substring(wordStartIndex, i));
+				words.add(sentence.substring(wordStartIndex, i) + " ");
 				wordStartIndex = i+1;
 			}else if(i == sentence.length() - 1) {
 				if(sentence.substring(wordStartIndex, sentence.length()) != " ") {
@@ -40,55 +54,76 @@ public class slowPrint {
 			}
 		}
 		
+		ArrayList<Timeline> totalTL = new ArrayList<Timeline>();
+		
 		int currentSentenceLength = 0;
 		for(int i = 0; i < words.size(); i++) {
-			if(i < words.size() - 1)
+			if(i < words.size() - 1) {
 				if(currentSentenceLength + words.get(i).length() + words.get(i + 1).length() > maxSentenceLength) {
-					ln(words.get(i), textbox, delay);
+					totalTL.add(ln(words.get(i), textbox, scrollyBoi, delay));
+					currentSentenceLength = words.get(i).length();
 				}else {
-					cont(words.get(i), textbox, delay);
+					totalTL.add(cont(words.get(i), textbox, delay));
+					currentSentenceLength += words.get(i).length();
 				}
-			else {
-				cont(words.get(i), textbox, delay);
+			}else {
+				totalTL.add(cont(words.get(i), textbox, delay));
+				currentSentenceLength += words.get(i).length();
 			}
 		}
 		
-		
+		for(int i = totalTL.size()-1; i >= 0; i--) {
+			applyFinish(i, totalTL);
+		}
+		totalTL.get(0).play();
 	}
 	
-	public static void cont(String sentence, Text textbox, int delay) throws InterruptedException{
-		char[] characters = sentence.toCharArray();
-		String temp = textbox.getText();
-		
-		for(int count = 0; count < characters.length; count++) {
-			temp += characters[count];
-			textbox.setText(String.format("%s", temp));
-			TimeUnit.MILLISECONDS.sleep(delay);
+	private static void applyFinish(int index, ArrayList<Timeline> totalTL) {
+		if(index != 0) {
+			totalTL.get(index-1).setOnFinished(event ->{
+				totalTL.get(index).play();
+			});
 		}
 	}
 	
-	public static void ln(String sentence, Text textbox, int delay) throws InterruptedException {
-		char[] characters = sentence.toCharArray();
-		String temp = textbox.getText();;
-		
-		for(int count = 0; count < characters.length; count++) {
-			if (characters[count] == '%' && characters[count + 1] == 'n') {
-				temp += "%n";
-				textbox.setText(String.format("%s", temp));
-				count++;
-			}else {
-				temp += characters[count];
-				textbox.setText(String.format("%s", temp));
-			}
-			
-			if(count == characters.length - 1) {
-				temp += "%n";
-				textbox.setText(String.format("%s", temp));
-			}else {
-				TimeUnit.MILLISECONDS.sleep(delay);
-			}
-		}
-	}
+	private static Timeline ln(String word ,TextArea textbox, ScrollPane scrollyBoi, int delay) {
+        Timeline timeline = new Timeline();
+        Duration delayBetweenMessages = Duration.millis(delay);
+        Duration frame = delayBetweenMessages;
+        for(char c: word.toCharArray()) {
+        	timeline.getKeyFrames().add(new KeyFrame(frame, e -> textbox.appendText(String.format("%c" , c))));
+            frame = frame.add(delayBetweenMessages);
+        }
+        timeline.getKeyFrames().add(new KeyFrame(frame, e -> textbox.appendText(String.format("%n"))));
+        frame = frame.add(delayBetweenMessages);
+        scrollyBoi.setVvalue(0);
+        
+        timeline.statusProperty().addListener((obs, oldStatus, newStatus) -> {
+            readyForInput.set(newStatus != Animation.Status.RUNNING);
+            if (newStatus != Animation.Status.RUNNING) {
+                textbox.requestFocus();
+            }
+        });
+        return timeline ;
+    }
+	
+	private static Timeline cont(String word ,TextArea textbox, int delay) {
+        Timeline timeline = new Timeline();
+        Duration delayBetweenMessages = Duration.millis(delay);
+        Duration frame = delayBetweenMessages;
+        for(char c: word.toCharArray()) {
+        	timeline.getKeyFrames().add(new KeyFrame(frame, e -> textbox.appendText(String.format("%c" , c))));
+            frame = frame.add(delayBetweenMessages);
+        }
+        
+        timeline.statusProperty().addListener((obs, oldStatus, newStatus) -> {
+            readyForInput.set(newStatus != Animation.Status.RUNNING);
+            if (newStatus != Animation.Status.RUNNING) {
+                textbox.requestFocus();
+            }
+        });
+        return timeline ;
+    }
 	
 	public static void cont(String sentence) throws InterruptedException {
 		char[] characters = sentence.toCharArray();

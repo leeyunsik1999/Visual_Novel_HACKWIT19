@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane fx:id="bap" onKeyPressed="#print" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="DialogueController">
+<AnchorPane fx:id="bap" prefHeight="581.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DialogueController">
    <children>
-      <StackPane fx:id="bop" onKeyPressed="#print" prefHeight="497.0" prefWidth="839.0">
+      <VBox alignment="BOTTOM_CENTER" fillWidth="false" layoutY="-1.0" prefHeight="581.0" prefWidth="858.0">
          <children>
-            <Text fx:id="genericTextBox" onKeyPressed="#print" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="749.13671875" />
-            <ImageView fitHeight="495.0" fitWidth="839.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="background" fitHeight="430.0" fitWidth="858.0" onKeyPressed="#print" onMouseClicked="#print" pickOnBounds="true" preserveRatio="true" />
+            <ScrollPane fx:id="scrollyBoi" pickOnBounds="false" prefHeight="357.0" prefWidth="872.0">
+               <content>
+                  <TextArea fx:id="genericTextBox" onKeyPressed="#print" prefHeight="149.0" prefWidth="842.0" />
+               </content>
+            </ScrollPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" />
          </children>
-      </StackPane>
+      </VBox>
    </children>
 </AnchorPane>
