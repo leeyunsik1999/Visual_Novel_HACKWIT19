@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="bap" onKeyPressed="#print" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="DialogueController">
+   <children>
+      <StackPane fx:id="bop" onKeyPressed="#print" prefHeight="497.0" prefWidth="839.0">
+         <children>
+            <Text fx:id="genericTextBox" onKeyPressed="#print" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="749.13671875" />
+            <ImageView fitHeight="495.0" fitWidth="839.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
