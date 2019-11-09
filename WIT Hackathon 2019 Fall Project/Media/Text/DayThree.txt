@@ -33,4 +33,3 @@
 [User]: Can you show me where the library is again? I need to pick up some books for class.
 [Java]: Sure thing [user]!
 [User]: After Java showed me where the library is, we talked a little longer, mostly about how Java would love to have me on the student council President, and I went home
-
