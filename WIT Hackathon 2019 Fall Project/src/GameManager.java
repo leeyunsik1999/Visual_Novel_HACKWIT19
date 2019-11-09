@@ -38,6 +38,16 @@ public class GameManager {
 		}
 	}
 	
+	public String secondWeekEventsHandler() {
+		if (BIAS[0][0] > BIAS[1][0] && BIAS[0][0] > BIAS[2][0]) {
+			return "python";
+		} else if (BIAS[1][0] > BIAS[0][0] && BIAS[1][0] > BIAS[0][0]) {
+			return "java";
+		} else {
+			return "c";
+		}
+	}
+	
 	/**
 	 * Method to change volume of music and sounds
 	 */

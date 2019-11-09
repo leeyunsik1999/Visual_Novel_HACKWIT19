@@ -30,6 +30,7 @@ public class pythonDays {
 	}
 
 	public static void dayThree(int[][] bias) {
+		
 		bias[0][0] = bias[0][0] + 1;
 		bias[0][1] = 3;
 	}
