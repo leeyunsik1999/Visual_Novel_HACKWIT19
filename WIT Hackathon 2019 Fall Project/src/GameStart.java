@@ -11,7 +11,7 @@ public class GameStart extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		//Shows main menu screen
-		Parent root = FXMLLoader.load(getClass().getResource("Main Menu.fxml")); 
+		Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml")); 
 		Scene scene = new Scene(root);
 		game.setScene(scene);
 		game.show();
