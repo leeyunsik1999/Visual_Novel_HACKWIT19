@@ -1,17 +1,17 @@
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.awt.image.BufferedImage;
-import javax.imageio.ImageIO;
 
+import javafx.scene.image.Image;
 import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 
 
 public class sceneOutline {
-    private File background;
-    private File dialogue;
-    private File character;
-    private Media music;
+    private static Image background;
+    private static File dialogue;
+    private static Image character;
+    private static Media music;
 
     public sceneOutline(){
         //default constructor
@@ -25,36 +25,49 @@ public class sceneOutline {
     }
 
     public void setBackground(String file) {
-        this.background = new File("\\Images\\Background\\" + file);
+    	FileInputStream imgIn;
+		try {
+			imgIn = new FileInputStream("\\Images\\Background\\" + file);
+			background = new Image(imgIn);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
     }
 
     public void setCharacter(String file) {
-        this.character = new File("\\Images\\Character\\" + file);
+    	FileInputStream imgIn;
+		try {
+			imgIn = new FileInputStream("\\Images\\Character\\" + file);
+			background = new Image(imgIn);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
     }
 
     // setDialougue("python.txt")
     public void setDialogue(String file) {
-        this.dialogue = new File("\\text\\" + file);
+        dialogue = new File("\\text\\" + file);
     }
 
     public void setMusic(String file){
-        this.music = new Media("\\music\\" + file);
+        music = new Media(new File("\\music\\" + file).toURI().toString());
     }
 
-    public BufferedImage getBackground() throws IOException{
-        return ImageIO.read(this.background);
+    public static Image getBackground() {
+    	return background;
+		
     }
 
-    public BufferedImage getCharacter() throws IOException{
-        return ImageIO.read(this.character);
+    public static Image getCharacter() {
+        return character;
     }
 
-    public File getDialogue() throws IOException{
+    public static File getDialogue() throws IOException{
         return dialogue;
     }
 
-    public MediaPlayer getMusic(){
-        return new MediaPlayer(this.music);
+    public static Media getMusic(){
+        return music;
     }
 
 }

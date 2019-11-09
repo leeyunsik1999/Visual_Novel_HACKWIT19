@@ -16,12 +16,12 @@
                <children>
                   <ImageView fx:id="background" fitHeight="581.0" fitWidth="872.0" onKeyPressed="#print" onMouseClicked="#print" pickOnBounds="true">
                      <image>
-                        <Image url="@Error.png" />
+                        <Image url="@../Media/Image/Error.png" />
                      </image>
                   </ImageView>
-                  <ScrollPane fx:id="scrollyBoi" layoutY="367.0" pickOnBounds="false" prefHeight="214.0" prefWidth="872.0" style="-fx-background-color: TRANSPARENT;">
+                  <ScrollPane fx:id="scrollyBoi" layoutY="367.0" pickOnBounds="false" prefHeight="214.0" prefWidth="872.0">
                      <content>
-                        <TextArea fx:id="genericTextBox" onKeyPressed="#print" prefHeight="210.0" prefWidth="870.0" style="-fx-background-color: TRANSPARENT;">
+                        <TextArea fx:id="genericTextBox" onKeyPressed="#print" prefHeight="210.0" prefWidth="870.0">
                            <font>
                               <Font size="20.0" />
                            </font>

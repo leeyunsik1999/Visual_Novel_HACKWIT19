@@ -17,12 +17,10 @@ public class GameStart extends Application {
 		game.show();
 		game.setResizable(false);
 		
-		
 	}
 	
 	public static void main(String[] args) {
 		launch(args);
-
 	}
 	
 

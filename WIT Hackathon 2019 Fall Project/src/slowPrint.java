@@ -19,6 +19,11 @@ import javafx.util.Duration;
 public class slowPrint {
 	
 	private static BooleanProperty readyForInput = new SimpleBooleanProperty(false);
+	private static int delay = 0;
+	
+	public static void setDelay(int newDelay) {
+		delay = newDelay;
+	}
 	
 	public static void ln(String sentence) throws InterruptedException {
 		char[] characters = sentence.toCharArray();
@@ -39,8 +44,9 @@ public class slowPrint {
 		}
 	}
 	
-	public static void autoFormat(String sentence, TextArea textbox,ScrollPane scrollyBoi, int delay, int maxSentenceLength) throws InterruptedException{
+	public static void autoFormat(String sentence, TextArea textbox,ScrollPane scrollyBoi, int d, int maxSentenceLength) throws InterruptedException{
 		textbox.setText("");
+		
 		ArrayList<String> words = new ArrayList<String>();
 		int wordStartIndex = 0;
 		for(int i = 0; i < sentence.length(); i++) {
@@ -60,14 +66,14 @@ public class slowPrint {
 		for(int i = 0; i < words.size(); i++) {
 			if(i < words.size() - 1) {
 				if(currentSentenceLength + words.get(i).length() + words.get(i + 1).length() > maxSentenceLength) {
-					totalTL.add(ln(words.get(i), textbox, scrollyBoi, delay));
+					totalTL.add(ln(words.get(i), textbox, scrollyBoi, d));
 					currentSentenceLength = words.get(i).length();
 				}else {
-					totalTL.add(cont(words.get(i), textbox, delay));
+					totalTL.add(cont(words.get(i), textbox, d));
 					currentSentenceLength += words.get(i).length();
 				}
 			}else {
-				totalTL.add(cont(words.get(i), textbox, delay));
+				totalTL.add(cont(words.get(i), textbox, d));
 				currentSentenceLength += words.get(i).length();
 			}
 		}

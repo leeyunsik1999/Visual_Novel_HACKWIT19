@@ -28,6 +28,9 @@ public class DialogueController implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		genericTextBox.setEditable(false);
 		genericTextBox.autosize();
+		genericTextBox.setStyle("-fx-background-color: transparent;");
+		background.setImage(sceneOutline.getBackground());
 	}
+	
 
 }
