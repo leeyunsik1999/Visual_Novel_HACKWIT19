@@ -29,15 +29,5 @@ public class DialogueController implements Initializable{
 		genericTextBox.setEditable(false);
 		genericTextBox.autosize();
 	}
-	
-	public void print() {
-		try {
-			slowPrint.autoFormat("Hello, My name is Bob. Bob Bob Bob Bob Bob Bob Bob Bob Bob Bob Bob Bob Bob Bob Bob Bob BobBob Bob Bob Bob BobBob Bob Bob BobBob Bob Bob BobBob BOBBOBBOBBOBBOBBOBBOBBOBBOBBOBBOBBOBBOBBOBBOB BOBBOBBOBBOBBOBBOBBOBBOB BOBBOBBOBBOBBOBBOB BOBBOBBOBBOBBOBBOBBOBBOB BOBBOBBOBBOBBOB.", genericTextBox, scrollyBoi, 20, 130);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
 
 }

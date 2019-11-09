@@ -2,21 +2,34 @@
 
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="bap" prefHeight="581.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DialogueController">
    <children>
       <VBox alignment="BOTTOM_CENTER" fillWidth="false" layoutY="-1.0" prefHeight="581.0" prefWidth="858.0">
          <children>
-            <ImageView fx:id="background" fitHeight="430.0" fitWidth="858.0" onKeyPressed="#print" onMouseClicked="#print" pickOnBounds="true" preserveRatio="true" />
-            <ScrollPane fx:id="scrollyBoi" pickOnBounds="false" prefHeight="357.0" prefWidth="872.0">
-               <content>
-                  <TextArea fx:id="genericTextBox" onKeyPressed="#print" prefHeight="149.0" prefWidth="842.0" />
-               </content>
-            </ScrollPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+            <AnchorPane prefHeight="587.0" prefWidth="872.0">
+               <children>
+                  <ImageView fx:id="background" fitHeight="581.0" fitWidth="872.0" onKeyPressed="#print" onMouseClicked="#print" pickOnBounds="true">
+                     <image>
+                        <Image url="@Error.png" />
+                     </image>
+                  </ImageView>
+                  <ScrollPane fx:id="scrollyBoi" layoutY="367.0" pickOnBounds="false" prefHeight="214.0" prefWidth="872.0" style="-fx-background-color: TRANSPARENT;">
+                     <content>
+                        <TextArea fx:id="genericTextBox" onKeyPressed="#print" prefHeight="210.0" prefWidth="870.0" style="-fx-background-color: TRANSPARENT;">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextArea>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
          </children>
       </VBox>
    </children>
