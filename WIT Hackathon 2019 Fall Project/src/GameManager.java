@@ -1,8 +1,14 @@
 import javafx.animation.FadeTransition;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import java.io.IOException;
 import java.util.Random;
 
 public class GameManager {
@@ -14,6 +20,41 @@ public class GameManager {
 	public static int VOLUME = 10;
 	public static String ROUTE;
 	public static MediaPlayer musicPlayer;
+	public static Stage game;
+	
+	/**
+     * Main world method that generates the world in a canvas that allows the player to move around in and encounter enemies
+     * 
+     * @param stage The javafx stage used to put the canvas in
+     */
+	public void generate(Stage stage) { 
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("DialogueGUI.fxml"));
+			stage.setScene(new Scene(root));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+        //Shows the world
+        stage.getScene().getRoot().setOpacity(0);
+    	FadeIn(stage.getScene().getRoot());
+        stage.show();
+        stage.setResizable(false);
+	}
+	
+	/**
+	 * Method to Fade into the world from any scene
+	 */
+	protected static void FadeIn(Parent vb) {
+		FadeTransition fadeTransition = new FadeTransition();
+		fadeTransition.setDuration(Duration.millis(1000));
+		fadeTransition.setNode(vb);
+		fadeTransition.setFromValue(0);
+		fadeTransition.setToValue(1);
+		fadeTransition.play();
+	}
 
 	public void dayHandler() {
 		for (int i = 0; i < 14; i++) {
@@ -86,7 +127,9 @@ public class GameManager {
 	 */
 	public static void changeSong(Media song) {
 		// If blank stop the music else change to given song
-		musicPlayer.stop();
+		if(musicPlayer != null) {
+			musicPlayer.stop();
+		}
 		musicPlayer = new MediaPlayer(song);
 		musicPlayer.setVolume(VOLUME);
 		musicPlayer.setOnEndOfMedia(new Runnable() {
@@ -101,7 +144,7 @@ public class GameManager {
 	 * Method that uses javaFX transitions to fade out of a scene to fade into the
 	 * world scene
 	 */
-	protected static void fadeToWorld(Node n) {
+	protected void fadeToNextScene(Node n) {
 		FadeTransition fadeTransition = new FadeTransition();
 		fadeTransition.setDuration(Duration.millis(1000));
 		fadeTransition.setNode(n);
@@ -113,8 +156,12 @@ public class GameManager {
 		fadeTransition.play();
 	}
 
-	public static void nextScene() {
-
+	public void nextScene() {
+		try {
+			generate(game);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

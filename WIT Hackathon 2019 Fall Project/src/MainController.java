@@ -50,7 +50,7 @@ public class MainController extends Menu implements Initializable{
 	
 	public void startGame(Event e) {
 		btnStart.setDisable(true);
-		fadeToWorld(mainMenu);
+		fadeToNextScene(mainMenu);
 	}
 	
 	public void quit() {
