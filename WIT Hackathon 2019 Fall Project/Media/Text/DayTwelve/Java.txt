@@ -1,0 +1,24 @@
+I show up to the student council room, as always.
+I help Java organize and arrange everything.
+Everything is going smoothly, but it seems like planning for the club fair demands a lot more than what the council is used to.
+Java, however, has no problem with it. As expected of the student council president, I guess.
+-Java joins-
+[Java]: Good work everyone! Just one more task to finish!
+[Java]: What kind of music should we play during the club fair?
+Choice:
+I think something jazzy, because it would be a party atmosphere after all. We wouldn't want anything inappropriate, either.:
+Something exciting! I think pop music would be nice.:
+We should go all out and play rock music! It should be an energetic day, after all!:
+Response:
+[Java]: That's a really good idea, User!
+[Java]: Hmm, I think that would be nice. Let's hear other opinions, first.
+[Java]I'm not too sure about that...
+After discussing it with everyone else, we decided that jazz would be a good genre to play during the fair.
+[User]: That was a lot of work!
+[Java]: Oh my, are you tired? I feel a bit bad for dragging you into this... >~<
+[User]: Oh, don't worry! I had a lot of fun.
+[Java]: I'm glad. Hmm, since we're talking about the fair..
+[Java]: Do you have any interest in joining the student council now?
+[User]: After spending time with all of you, I think I will be applying to the council!
+[Java]: Great! I hope you can get in!
+[User]: Me too! I'll see you around.

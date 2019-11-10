@@ -1,0 +1,18 @@
+"I can hardly wait to find out if I got into the council"
+"I should hurry to school."
+scene clubroom
+[Java]: User!
+-Java joins-
+[Java]: Great news!! You got in!!!
+[Java]: Really?!
+[Java]: I'm so happy! I didn't fancy my chances, being a new student here and all...
+[Java]: Not at all! YOu helped us out a lot, you know. It only makes sense that you become a part of the team.
+[User]: I'm glad I did! Do you want to get lunch with me? To celebrate the occasion?
+[Java]: Don't get ahead of yourself.
+[Java]: It's only the beginning, you know that, right? The real work is ahead of us.
+[User]: .... so, is that a no on the invite?
+[Java]: Hmm... We do have to celebrate, though.
+[Java]: Lunch sounds fine. Let's go!
+After that, we talked about various things about the council.
+Java and I got closer over time, and before we knew it, we became the best of friends.
+After she graduated, I became the next president, hoping that I'll be able to continue her legacy.
