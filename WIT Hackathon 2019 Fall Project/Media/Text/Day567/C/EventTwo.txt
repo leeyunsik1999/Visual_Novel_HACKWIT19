@@ -1,5 +1,5 @@
 [User]: Hm… The book club sounded interesting, I want to go and learn more about them. 
--Library-
+-Library.jpg-
 [User]: Hey, C! 
 [C]: Oh, hey, [user]. How was the book?
 [User]: It was pretty interesting, I think I understand it a bit now.

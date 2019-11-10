@@ -1,5 +1,5 @@
 [User]: Let’s go to the library again! 
--Library-
+-Library.jpg-
 [User]: Hey, C! I’m here.
 [C]: You’ve been coming here quite often, huh. You must be interested in books.
 [User]: Yeah! I’ve been having fun here. 

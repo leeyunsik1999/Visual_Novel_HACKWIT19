@@ -1,8 +1,6 @@
--Bedroom-
 [User]: Hmm… I got a text.. Oh, It’s from Python.
 [User]: She wants to eat lunch with me today. I guess I have nothing else to do… might as well.
-
--Diner-
+-Diner.jpg-
 [Python]: Hey [User]! Over here!
 [User]: Hey Python! 
 [Python]: Thanks for coming today! This is my favorite restaurant in town. The food is sooooo gooooood….

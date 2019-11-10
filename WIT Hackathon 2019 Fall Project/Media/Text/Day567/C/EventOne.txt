@@ -1,5 +1,5 @@
 [User]:I’ll check the library. That person might have returned the book by now.
--Library-
+-Library.jpg-
 [???]: Oh, it’s you.
 [User]: Hey! Did you finish the book yet?
 [C]: I tried, but I don’t think I can understand strings after all. I’m C, by the way.
