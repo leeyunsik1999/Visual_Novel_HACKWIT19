@@ -74,19 +74,53 @@ public class DialogueController extends Menu implements Initializable{
 			while(in.hasNext()) {
 				String s = in.nextLine();
 				if(s.contains("Choice:")) {
+					choice3Text.setText("");
 					if(s.contains("2")) {
-						choice1Text.setText(in.nextLine());
-						choice2Text.setText(in.nextLine());
-					}else {
+						String temp = in.nextLine();
+						if(temp.equals("***")) {
+							String multiLine = "";
+							while(!temp.equals("***")) {
+								if(multiLine.equals("")) {
+									multiLine += temp;
+								}else {
+									multiLine += String.format("%n%s", temp);
+								}
+								temp = in.nextLine();
+							}
+						}else {
+							choice1Text.setText(temp);
+						}
+						
+						temp = in.nextLine();
+						if(temp.equals("***")) {
+							String multiLine = "";
+							while(!temp.equals("***")) {
+								if(multiLine.equals("")) {
+									multiLine += temp;
+								}else {
+									multiLine += String.format("%n%s", temp);
+								}
+								temp = in.nextLine();
+							}
+						}else {
+							choice2Text.setText(temp);
+						}
+					} else {
 						choice1Text.setText(in.nextLine());
 						choice2Text.setText(in.nextLine());
 						choice3Text.setText(in.nextLine());
 					}
 					dialogue.add(s);
-				}else if(s.equals("Response:")) {
-					responses[0] = in.nextLine();
-					responses[1] = in.nextLine();
-					responses[2] = in.nextLine();
+				}else if(s.contains("Response:")) {
+					if(s.contains("2")) {
+						responses[0] = in.nextLine();
+						responses[1] = in.nextLine();
+					}else {
+						responses[0] = in.nextLine();
+						responses[1] = in.nextLine();
+						responses[2] = in.nextLine();
+					}
+					
 				}else {
 					dialogue.add(s);
 				}
@@ -118,7 +152,27 @@ public class DialogueController extends Menu implements Initializable{
         			}
         			
         			
-        		}else {
+        		}else if(dialogue.get(currentDialogue).startsWith("-") && dialogue.get(currentDialogue).endsWith("-")){
+        			String dia = dialogue.get(currentDialogue);
+        			if(dia.contains("leaves")) {
+        				fadeChar(characterImage ,false);
+        			}else if(dia.contains("joins")) {
+        				int lastIndex = 1;
+        				for(int i = 1; i < dia.length(); i++) {
+        					if(dia.charAt(i) == ' ') {
+        						lastIndex = i;
+        						break;
+        					}
+        				}
+        				sceneOutline.setCharacter(dia.substring(1, lastIndex) + ".png");
+        				characterImage.setImage(sceneOutline.getCharacter());
+        				fadeChar(characterImage, true);
+        			}else {
+        				fadeChar(characterImage, false);
+        				sceneOutline.setBackground(dia.substring(1, dia.length() - 1));
+        				background.setImage(sceneOutline.getBackground());
+        			}
+        		} else {
         			try {
             			keyPressed(scrollyBoi, in);
                         slowPrint.autoFormat(dialogue.get(currentDialogue), genericTextBox, scrollyBoi, 30, 90);
@@ -128,6 +182,45 @@ public class DialogueController extends Menu implements Initializable{
                     }
         		}
         		
+        	}
+            
+        }));
+        timeline.setOnFinished(ActionEvent -> {
+        	keyPressedNext(scrollyBoi,in);
+        });
+		runningDialogue = timeline;
+		runningDialogue.play();
+	}
+	
+	public void printDialogueFast(Scanner in) {
+		runningDialogue = new Timeline();
+		Timeline timeline = new Timeline();
+        timeline.getKeyFrames().add(new KeyFrame(Duration.ONE, e -> {
+        		for(String s: dialogue) {
+        			if(!s.equals("")) {
+                		if(s.contains("Choice:")) {
+                			choiceBox.setDisable(false);
+                			choiceBox.setOpacity(1);
+                			choiceBox.toFront();
+                			emptyKeyPressed(scrollyBoi);
+                			if(s.contains("2")) {
+                				setChoicePress2(in);
+                			}else {
+                    			setChoicePress3(in);
+                			}
+                			
+                			
+                		}else {
+                			try {
+                    			keyPressedNext(scrollyBoi, in);
+                                slowPrint.autoFormat(s, genericTextBox, scrollyBoi, 1, 90);
+                            } catch (InterruptedException e1) {
+                                // TODO Auto-generated catch block
+                                e1.printStackTrace();
+                            }
+                		}
+        		}
+        	
         	}
             
         }));
@@ -270,14 +363,14 @@ public class DialogueController extends Menu implements Initializable{
 		});
 	}
 	
-	public void setChoicePress3(Scanner in) {
+	public void setChoicePress2(Scanner in) {
 		choice1Text.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
 			@Override
 			public void handle(MouseEvent event) {
 				switch(currentChar){
 					case "java":
-						GameManager.BIAS[1][0]++;
+						GameManager.BIAS[1][0] -= 2;
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
@@ -288,7 +381,7 @@ public class DialogueController extends Menu implements Initializable{
 						}
 						break;
 					case "python":
-						GameManager.BIAS[0][0]++;
+						GameManager.BIAS[0][0]-= 2;
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
@@ -299,7 +392,7 @@ public class DialogueController extends Menu implements Initializable{
 						}
 						break;
 					case "c":
-						GameManager.BIAS[2][0]++;
+						GameManager.BIAS[2][0]-= 2;
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
@@ -321,6 +414,7 @@ public class DialogueController extends Menu implements Initializable{
 			public void handle(MouseEvent event) {
 				switch(currentChar){
 					case "java":
+						GameManager.BIAS[1][0]++;
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
@@ -331,6 +425,7 @@ public class DialogueController extends Menu implements Initializable{
 						}
 						break;
 					case "python":
+						GameManager.BIAS[0][0]++;
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
@@ -341,6 +436,7 @@ public class DialogueController extends Menu implements Initializable{
 						}
 						break;
 					case "c":
+						GameManager.BIAS[2][0]++;
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
@@ -391,6 +487,33 @@ public class DialogueController extends Menu implements Initializable{
 	}
 	
 	public void keyPressed(Parent p, Scanner in) {
+		
+		p.setOnKeyReleased(new EventHandler<KeyEvent>() {
+		      @Override
+		      public void handle(KeyEvent e) {
+		    	  if(e.getCode() == KeyCode.ESCAPE) {
+		    		runningDialogue.stop();
+		    		slowPrint.printer.stop();
+		    		slowPrint.printer.stop();
+		    		slowPrint.printer.stop();
+		    		slowPrint.printer.stop();
+		    		slowPrint.printer.stop();
+		    		slowPrint.printer.stop();
+		    		slowPrint.printer.stop();
+		    		slowPrint.printer.stop();
+		    		slowPrint.printer.stop();
+		    		slowPrint.printer.stop();
+		    		slowPrint.printer.stop();
+		    		
+		    		printDialogueFast(in);
+		    	  }
+		    	  e.consume();
+		        }
+		    });
+	}
+	
+	public void keyPressedNext(Parent p, Scanner in) {
+		
 		p.setOnKeyReleased(new EventHandler<KeyEvent>() {
 		      @Override
 		      public void handle(KeyEvent e) {

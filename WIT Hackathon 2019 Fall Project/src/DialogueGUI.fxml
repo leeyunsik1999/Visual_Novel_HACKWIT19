@@ -20,7 +20,7 @@
                         <Image url="@../Media/Image/Background/Cafe.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="characterImage" fitHeight="521.0" fitWidth="403.0" layoutX="235.0" layoutY="60.0" pickOnBounds="true">
+                  <ImageView fx:id="characterImage" fitHeight="521.0" fitWidth="403.0" layoutX="235.0" layoutY="60.0" opacity="0.0" pickOnBounds="true">
                      <image>
                         <Image url="@../Media/Image/Character/PythonGIrl.png" />
                      </image>

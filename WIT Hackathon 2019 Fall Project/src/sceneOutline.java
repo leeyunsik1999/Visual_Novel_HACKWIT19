@@ -24,28 +24,38 @@ public class sceneOutline {
         setMusic(music);
     }
 
-    public void setBackground(String file) {
-    	FileInputStream imgIn;
-		try {
-			imgIn = new FileInputStream("Media\\Image\\Background\\" + file);
-			background = new Image(imgIn);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
+    public static void setBackground(String file) {
+    	if(file.equals("none")) {
+    		
+    	}else {
+    		FileInputStream imgIn;
+    		try {
+    			imgIn = new FileInputStream("Media\\Image\\Background\\" + file);
+    			background = new Image(imgIn);
+    		} catch (FileNotFoundException e) {
+    			e.printStackTrace();
+    		}
+    	}
     }
 
-    public void setCharacter(String file) {
-    	FileInputStream imgIn;
-		try {
-			imgIn = new FileInputStream("Media\\Image\\Character\\" + file);
-			character = new Image(imgIn);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
+    public static void setCharacter(String file) {
+    	
+    	if(file.equals("none")) {
+    		
+    	}else {
+    		FileInputStream imgIn;
+    		try {
+    			imgIn = new FileInputStream("Media\\Image\\Character\\" + file);
+    			character = new Image(imgIn);
+    		} catch (FileNotFoundException e) {
+    			e.printStackTrace();
+    		}
+    	}
+    	
     }
 
     // setDialougue("python.txt")
-    public void setDialogue(String file) {
+    public static void setDialogue(String file) {
         dialogue = new File("Media\\Text\\" + file);
     }
 

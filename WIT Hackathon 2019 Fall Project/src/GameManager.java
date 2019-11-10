@@ -63,15 +63,19 @@ public class GameManager {
 		switch(DAY) {
 			case 0:
 				scene = new sceneOutline("Userroom.jpg", "DayOne.txt", "none", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+				ROUTE = "none";
 				break;
 			case 1:
-				scene = new sceneOutline("Error.png", "DayTwo.txt", "PythonGirl.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+				scene = new sceneOutline("Userroom.jpg", "DayTwo.txt", "PythonGirl.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+				ROUTE = "Python";
 				break;
 			case 2:
-				scene = new sceneOutline("Error.png", "DayThree.txt", "Java.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+				scene = new sceneOutline("Schoolgate.jpg", "DayThree.txt", "Java.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+				ROUTE = "Java";
 				break;
 			case 3:
-				scene = new sceneOutline("Error.png", "DayFour.txt", "C.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+				scene = new sceneOutline("Schoolgate.png", "DayFour.txt", "C.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+				ROUTE = "C";
 				break;
 			case 4:
 				scene = new sceneOutline("Schoolgate.jpg", "\\Day567\\Day567 Choice.txt", "none", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
@@ -188,6 +192,24 @@ public class GameManager {
 		fadeTransition.setOnFinished(ActionEvent -> {
 			nextScene();
 		});
+		fadeTransition.play();
+	}
+	
+	/**
+	 * Method that uses javaFX transitions to fade out of a scene to fade into the
+	 * world scene
+	 */
+	public void fadeChar(Node n, boolean in) {
+		FadeTransition fadeTransition = new FadeTransition();
+		fadeTransition.setDuration(Duration.millis(500));
+		fadeTransition.setNode(n);
+		if(in) {
+			fadeTransition.setFromValue(0);
+			fadeTransition.setToValue(1);
+		}else {
+			fadeTransition.setFromValue(1);
+			fadeTransition.setToValue(0);
+		}
 		fadeTransition.play();
 	}
 
