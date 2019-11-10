@@ -1,0 +1,23 @@
+[User]: The student council was interesting the last time I went there, I guess I will check it out again
+-Clubroom.jpg-
+[User]: Hey Java, anything interesting happening today?
+[Java]: Oh hey [User], fancy seeing you again.
+[Java]: We’re approving club request forms right now.
+[User]: What are club request forms?
+[Java]: It’s when a club wants to request for something, like to reserve a space or for extra funding.
+[User]: Sounds important, does everything gets approved?
+[Java]: If the forms are filled correctly then yes, but people don’t actually take time to do it, so they get turn down according to the school policy
+[User]: What are some of the things people get wrong
+[Java]: Oh like, when they declare the wrong type of request, or if they request something that is only accessible by private students.
+Choice:
+I guess it makes sense, the requests have to be formatted correctly or nothing will make sense after all
+That’s oddly specific, but I guess that’s just how it works
+It’s a bit unnecessary I think
+Reply:
+I agree with you, rules exist for a reason!
+Yeah
+I think rules exist for a reason, but to each their own 
+[User]: Anything else you do besides approving forms?
+[Java]: We are also working on the club fair later, you’re more than welcome to join us to organize.
+[User]: I’ll think about it. I’m going to class now. Good luck with the forms
+[Java]: Thanks, see you later!

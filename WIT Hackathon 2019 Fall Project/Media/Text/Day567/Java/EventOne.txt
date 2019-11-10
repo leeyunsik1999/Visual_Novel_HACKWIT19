@@ -1,0 +1,23 @@
+I decided to check out the Student Council
+-Clubroom.jpg-
+[User]: Hello? is this the student council? 
+[Java]: Hey [User], I’m so glad you came!
+[User]: Huh, so this is the famous student council.
+[Java]: Yep! In the flesh!
+[User]: Everything is so organized and neat here.
+[Java]: Yeah, I really like to structure things, it makes it much easier to access whatever I need. Although some people say I am a bit obsessive.
+[User]: I think it’s nice though, at least you know where everything is, you’ll never lose anything.
+[Java]: I know right! Actually, since you’re here, I need some help.
+[Java]: I have this book about cats here, where should I put it?
+Choice:
+Hmm, you should put it in the pet drawer, since cat is a pet
+I think the animal drawer is fine
+A cat belongs anywhere, so anywhere is fine!
+Reply:
+[Java] That’s a really good idea! Since cat is a subclass of pet afterall
+[Java] I think that’s okay 
+[Java] Eh….Eh??? Wouldn’t putting cat with other pets make more sense? But I guess any object works.
+[Java]: Thank you for your input
+[User]: No problem!
+[User]: I gotta run to class now, I will see you around?
+[Java]: See you!!
