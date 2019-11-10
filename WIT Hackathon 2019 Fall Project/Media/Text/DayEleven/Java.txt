@@ -1,0 +1,13 @@
+[User]: The quiz is overrrr! Studying helped out! I wonder how C did. I guess I should head over to the student council room!
+-Library.jpg-
+[User]: Hey C!
+[C]: Hey User! What’s up?
+[User]: I was going to talk to you about the quiz! Was wondering how you did.
+[C]: Umm...I’m not sure…I hope I did okay.
+[User]: Knowing you, you probably scored the highest out of all of us
+[C]: Haha, thanks for the encouragement.
+[C]: Hey, wanna stop by at the library tomorrow? I can use some input picking out a new book.
+[User]: Sure! My pleasure.
+[C]: Hehe, thanks~!
+[User]: I’ll see you tomorrow then! Good luck!!
+[C]: Thanks!

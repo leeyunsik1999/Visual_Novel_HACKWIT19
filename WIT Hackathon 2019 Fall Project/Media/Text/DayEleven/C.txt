@@ -1,0 +1,12 @@
+[User]: The quiz is overrrr! Studying helped out! I wonder how Java did. I guess I should head over to the student council room!
+-Clubroom.jpg-
+[User]: Hey Java!
+[Java]: Hey User! What’s up?
+[User]: I was going to talk to you about the quiz! Was wondering how you did.
+[Java]: I did pretty good
+[User]: As expected of our student council president!
+[Java]: Oh! Right, I wanted to ask, can you come and help us out tomorrow? We have a lot to prepare!
+[User]: Sure! My pleasure.
+[Java]: Hehe, thanks~!
+[User]: I’ll see you tomorrow then! Good luck!!
+[Java]: Thanks!
