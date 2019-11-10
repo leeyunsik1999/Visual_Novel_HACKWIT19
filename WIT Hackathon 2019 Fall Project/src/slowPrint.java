@@ -21,6 +21,7 @@ public class slowPrint {
 	private static BooleanProperty readyForInput = new SimpleBooleanProperty(false);
 	private static int delay = 0;
 	public static Timeline printer;
+	public static boolean Stop = false;
 	
 	public static void setDelay(int newDelay) {
 		delay = newDelay;
@@ -99,10 +100,10 @@ public class slowPrint {
         Duration frame = delayBetweenMessages;
         timeline.getKeyFrames().add(new KeyFrame(frame, e -> printer = timeline));
         for(char c: word.toCharArray()) {
-        	timeline.getKeyFrames().add(new KeyFrame(frame, e -> textbox.appendText(String.format("%c" , c))));
+        	timeline.getKeyFrames().add(new KeyFrame(frame, e -> {if(!Stop){textbox.appendText(String.format("%c" , c));}else{timeline.stop();}}));
             frame = frame.add(delayBetweenMessages);
         }
-        timeline.getKeyFrames().add(new KeyFrame(frame, e -> textbox.appendText(String.format("%n"))));
+        timeline.getKeyFrames().add(new KeyFrame(frame, e -> {if(!Stop){textbox.appendText(String.format("%n"));}else{timeline.stop();}}));
         frame = frame.add(delayBetweenMessages);
         scrollyBoi.setVvalue(0);
         
@@ -121,7 +122,7 @@ public class slowPrint {
         Duration frame = delayBetweenMessages;
         timeline.getKeyFrames().add(new KeyFrame(frame, e -> printer = timeline));
         for(char c: word.toCharArray()) {
-        	timeline.getKeyFrames().add(new KeyFrame(frame, e -> textbox.appendText(String.format("%c" , c))));
+        	timeline.getKeyFrames().add(new KeyFrame(frame, e -> {if(!Stop){textbox.appendText(String.format("%c" , c));}else{timeline.stop();}}));
             frame = frame.add(delayBetweenMessages);
         }
         

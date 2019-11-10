@@ -1,5 +1,5 @@
 [User]: I have some time.. I should check out some clubs!
-[User]: I wonder where I should go�
+[User]: I wonder where I should go?
 Choice:
 The track
 Student Council Room

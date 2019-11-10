@@ -3,6 +3,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
@@ -66,7 +68,7 @@ public class GameManager {
 				ROUTE = "none";
 				break;
 			case 1:
-				scene = new sceneOutline("Userroom.jpg", "DayTwo.txt", "PythonGirl.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+				scene = new sceneOutline("Userroom.jpg", "DayTwo.txt", "Python.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
 				ROUTE = "Python";
 				break;
 			case 2:
@@ -210,6 +212,28 @@ public class GameManager {
 			fadeTransition.setFromValue(1);
 			fadeTransition.setToValue(0);
 		}
+		fadeTransition.play();
+	}
+	
+	/**
+	 * Method that uses javaFX transitions to fade out of a scene to fade into the
+	 * world scene
+	 */
+	public void fadeBackground(ImageView iv, Image m) {
+		FadeTransition fadeTransition = new FadeTransition();
+		fadeTransition.setDuration(Duration.millis(500));
+		fadeTransition.setNode(iv);
+		fadeTransition.setFromValue(1);
+		fadeTransition.setToValue(0);
+		fadeTransition.setOnFinished(ActionEvent -> {
+			FadeTransition fadeTrans = new FadeTransition();
+			iv.setImage(m);
+			fadeTrans.setDuration(Duration.millis(500));
+			fadeTrans.setNode(iv);
+			fadeTrans.setFromValue(0);
+			fadeTrans.setToValue(1);
+			fadeTrans.play();
+		});
 		fadeTransition.play();
 	}
 

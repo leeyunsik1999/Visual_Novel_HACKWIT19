@@ -1,7 +1,7 @@
 [User]: School is finally over! I think I'm getting used to the lessons, but extra studying won't hurt. If I remember right, the library was this way!
 -Library.jpg-
 Mmm! It's a nice library. There's the help desk! Let's go ask where the book is.
-[User]: Hello, where can i find the book [String Theory]?
+[User]: Hello, where can I find the book [String Theory]?
 [Library person]: It should be in that section of the library.
 [User]: Thank you!
 [User]: String! string! Not char! Ah! Here it is. I'm glad it's there.

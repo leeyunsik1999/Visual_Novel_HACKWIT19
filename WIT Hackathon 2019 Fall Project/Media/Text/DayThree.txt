@@ -15,7 +15,7 @@ The student council president spent the morning introducing me to various depart
 [User]: Track and field?
 [Java]: Are you interested?
 [User]: Yeah! Kinda... I'm just looking out for a club I might like to join.
-[Java]: That's great! !. It's not exactly a club, but the student council could use someone as enthusiastic as you!
+[Java]: That's great! It's not exactly a club, but the student council could use someone as enthusiastic as you!
 [User]: Really? Wouldn't I be too inexperienced?
 [Java]: Not at all! We would love to have some fresh bloo!.i mean some new students as members! We also have a club fair you can check out!
 [User]: When is that going to be?

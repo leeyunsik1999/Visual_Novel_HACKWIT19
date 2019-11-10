@@ -137,6 +137,7 @@ public class DialogueController extends Menu implements Initializable{
 	
 	public void printDialogue(Scanner in) {
 		runningDialogue = new Timeline();
+		slowPrint.Stop = false;
 		Timeline timeline = new Timeline();
         timeline.getKeyFrames().add(new KeyFrame(Duration.ONE, e -> {
         	if(!dialogue.get(currentDialogue).equals("")) {
@@ -168,10 +169,20 @@ public class DialogueController extends Menu implements Initializable{
         				characterImage.setImage(sceneOutline.getCharacter());
         				fadeChar(characterImage, true);
         			}else {
-        				fadeChar(characterImage, false);
+        				if(characterImage.getOpacity() != 0) {
+        					fadeChar(characterImage, false);
+        				}
         				sceneOutline.setBackground(dia.substring(1, dia.length() - 1));
-        				background.setImage(sceneOutline.getBackground());
+        				fadeBackground(background, sceneOutline.getBackground());
         			}
+        			currentDialogue++;
+        			try {
+            			keyPressed(scrollyBoi, in);
+                        slowPrint.autoFormat(dialogue.get(currentDialogue), genericTextBox, scrollyBoi, 30, 90);
+                    } catch (InterruptedException e1) {
+                        // TODO Auto-generated catch block
+                        e1.printStackTrace();
+                    }
         		} else {
         			try {
             			keyPressed(scrollyBoi, in);
@@ -194,6 +205,7 @@ public class DialogueController extends Menu implements Initializable{
 	
 	public void printDialogueFast(Scanner in) {
 		runningDialogue = new Timeline();
+		slowPrint.Stop = false;
 		Timeline timeline = new Timeline();
         timeline.getKeyFrames().add(new KeyFrame(Duration.ONE, e -> {
         		for(String s: dialogue) {
@@ -315,9 +327,7 @@ public class DialogueController extends Menu implements Initializable{
 						}
 						break;
 				}
-				
 			}
-			
 		});
 		
 		choice3Text.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -455,6 +465,7 @@ public class DialogueController extends Menu implements Initializable{
 	
 	public void skip(Scanner in) {
 		runningDialogue.stop();
+		slowPrint.Stop = true;
 		slowPrint.printer.stop();
 		slowPrint.printer.stop();
 		slowPrint.printer.stop();
@@ -493,6 +504,7 @@ public class DialogueController extends Menu implements Initializable{
 		      public void handle(KeyEvent e) {
 		    	  if(e.getCode() == KeyCode.ESCAPE) {
 		    		runningDialogue.stop();
+		    		slowPrint.Stop = true;
 		    		slowPrint.printer.stop();
 		    		slowPrint.printer.stop();
 		    		slowPrint.printer.stop();
