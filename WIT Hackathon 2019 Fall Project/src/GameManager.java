@@ -62,7 +62,7 @@ public class GameManager {
 	public void dayHandler() {
 		switch(DAY) {
 			case 0:
-				scene = new sceneOutline("Error.png", "DayOne.txt", "Error.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+				scene = new sceneOutline("Userroom.jpg", "DayOne.txt", "Error.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
 				break;
 			case 1:
 				scene = new sceneOutline("Error.png", "DayTwo.txt", "JAVA.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");

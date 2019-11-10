@@ -17,12 +17,12 @@
                <children>
                   <ImageView fx:id="background" fitHeight="581.0" fitWidth="872.0" pickOnBounds="true">
                      <image>
-                        <Image url="@../Media/Image/Error.png" />
+                        <Image url="@../Media/Image/Background/Cafe.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="characterImage" fitHeight="364.0" fitWidth="200.0" layoutX="336.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="characterImage" fitHeight="307.0" fitWidth="286.0" layoutX="299.0" layoutY="60.0" pickOnBounds="true">
                      <image>
-                        <Image url="@../Media/Image/JAVA.png" />
+                        <Image url="@../Media/Image/Character/PythonGIrl.png" />
                      </image>
                   </ImageView>
                   <ScrollPane fx:id="scrollyBoi" layoutY="367.0" pickOnBounds="false" prefHeight="214.0" prefWidth="872.0">
@@ -34,7 +34,7 @@
                         </TextArea>
                      </content>
                   </ScrollPane>
-                  <VBox fx:id="choiceBox" layoutX="244.0" layoutY="56.0" prefHeight="200.0" prefWidth="392.0">
+                  <VBox fx:id="choiceBox" layoutX="246.0" layoutY="75.0" opacity="0.0" prefHeight="200.0" prefWidth="392.0" style="-fx-background-color: BLUE;">
                      <children>
                         <Label fx:id="choice1Text" text="Choice 1">
                            <font>
