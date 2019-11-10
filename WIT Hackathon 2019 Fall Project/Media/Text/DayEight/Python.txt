@@ -1,0 +1,24 @@
+-Bedroom-
+[User]: Hmm… I got a text.. Oh, It’s from Python.
+[User]: She wants to eat lunch with me today. I guess I have nothing else to do… might as well.
+
+-Diner-
+[Python]: Hey [User]! Over here!
+[User]: Hey Python! 
+[Python]: Thanks for coming today! This is my favorite restaurant in town. The food is sooooo gooooood….
+[User]: I bet it is. Can’t wait to eat. Anyways, what’s the occasion for calling me out here?
+[Python]: Oh, I was just wondering if maybe you were interested in the track and field club? You looked interested in the past couple days, coming to watch us and all.
+Choice:
+Yeah, it looked fun! The simple elegance of running seems like something I want to get into. (+1) //(Actually, yeah, I was kind of interested in joining.)
+I don’t know. It looks fun, but it’s a bit different from what I’ve done before. I’m up for trying it out, though. (0) //(I don’t really know, I’ve never been much for running)
+Maybe, but it doesn’t seem to suit me too well… (-1) //(Nah, I need something a little more mentally stimulating. Ya know?)
+
+
+Reply: 
+[Python]: I totally agree! Over complicating things have never been my style, things should be easy to understand, and running is even easier!
+[Python]: Yeah, trying out new things can be a little intimidating, but I think you’ll find it’s pretty easy to get the hang of.
+[Python]: You sure? It’s pretty fun you know… I’m sure you’ll have fun if you try it out.
+
+
+
+We spoke for a little while longer, Python seemed pretty excited about me joining though, I’ll have to give her offer some more thought.

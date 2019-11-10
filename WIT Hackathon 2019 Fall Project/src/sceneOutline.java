@@ -27,7 +27,7 @@ public class sceneOutline {
     public void setBackground(String file) {
     	FileInputStream imgIn;
 		try {
-			imgIn = new FileInputStream("\\Images\\Background\\" + file);
+			imgIn = new FileInputStream("Media\\Image\\Background\\" + file);
 			background = new Image(imgIn);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -37,7 +37,7 @@ public class sceneOutline {
     public void setCharacter(String file) {
     	FileInputStream imgIn;
 		try {
-			imgIn = new FileInputStream("\\Images\\Character\\" + file);
+			imgIn = new FileInputStream("Media\\Image\\Character\\" + file);
 			background = new Image(imgIn);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -46,11 +46,11 @@ public class sceneOutline {
 
     // setDialougue("python.txt")
     public void setDialogue(String file) {
-        dialogue = new File("\\text\\" + file);
+        dialogue = new File("Media\\Text\\" + file);
     }
 
     public void setMusic(String file){
-        music = new Media(new File("\\music\\" + file).toURI().toString());
+        music = new Media(new File("Media\\Music\\" + file).toURI().toString());
     }
 
     public static Image getBackground() {
