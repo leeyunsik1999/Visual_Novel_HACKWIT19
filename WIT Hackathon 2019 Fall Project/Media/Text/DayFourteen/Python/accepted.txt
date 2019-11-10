@@ -1,0 +1,14 @@
+-Bedroom-
+I can hardly wait to find out if I got into the club! I should hurry to school.
+-Classroom- 
+[Python]: Hey! [User], over here! 
+[User]: Oh hey Python, any news on my club application?
+[Python]: Actually, yes! I wanted to be the one to tell you that…
+[Python]: You’re totally in! 
+[User]: That’s great news! I’m excited to try it out.
+[Python]: You’ll have to take it seriously, you know? Track and field is rewarding but it’s not all fun and games, it takes practice like anything else to get good at.
+[User]: Of course, I’ll be doing my best.
+[Python]: Great! I’m glad you will get to spend more time with me, Python, the far superior coding language that the game devs are only slightly biased towards!
+[User]: Oh… Uh, yeah, sure.
+[Python]: Yay!
+From then on, I was a member of the track and field club and slowly but surely my skills improved over time. Python helped me out with simple tips and tricks.
