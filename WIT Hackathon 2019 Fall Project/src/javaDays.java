@@ -1,37 +1,49 @@
+import javafx.scene.Node;
 
-public class javaDays {
+public class javaDays extends GameManager{
 
-	public static void dayCheck(int[][] bias) {
-		switch (bias[1][1]) {
+	public void dayCheck(Node n) {
+		switch (BIAS[1][1]) {
 
 		case 0:
-			dayOne(bias);
+			BIAS[1][0] = BIAS[1][0] + 1;
+			BIAS[1][1] = 1;
+			scene = new sceneOutline("SchoolGate.jpg","\\Day567\\Java\\EventOne.txt","Java.png","Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
 			break;
 			
 		case 1:
-			dayTwo(bias);
+			BIAS[1][0] = BIAS[1][0] + 1;
+			BIAS[1][1] = 2;
+			scene = new sceneOutline("SchoolGate.jpg","\\Day567\\Java\\EventTwo.txt","Java.png","Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
 			break;
 			
 		case 2:
-			dayThree(bias);
+			BIAS[1][0] = BIAS[1][0] + 1;
+			BIAS[1][1] = 3;
+			scene = new sceneOutline("SchoolGate.jpg","\\Day567\\Java\\EventThree.txt","Java.png","Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
 			break;
 			
 		}
+		fadeToNowScene(n);
 	}
 
-	public static void dayOne(int[][] bias) {
-		bias[1][0] = bias[1][0] + 1;
-		bias[1][1] = 1;
+	public void dayOne(Node n) {
+		BIAS[1][0] = BIAS[1][0] + 1;
+		BIAS[1][1] = 1;
+		scene = new sceneOutline("SchoolGate.jpg","\\Day567\\Java\\EventOne.txt","Java.png","Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+		fadeToNowScene(n);
 	}
 
-	public static void dayTwo(int[][] bias) {
-		bias[1][0] = bias[1][0] + 1;
-		bias[1][1] = 2;
+	public void dayTwo(Node n) {
+		BIAS[1][0] = BIAS[1][0] + 1;
+		BIAS[1][1] = 2;
+		scene = new sceneOutline("SchoolGate.jpg","\\Day567\\Java\\EventTwo.txt","Java.png","Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
 	}
 
-	public static void dayThree(int[][] bias) {
-		bias[1][0] = bias[1][0] + 1;
-		bias[1][1] = 3;
+	public void dayThree(Node n) {
+		BIAS[1][0] = BIAS[1][0] + 1;
+		BIAS[1][1] = 3;
+		scene = new sceneOutline("SchoolGate.jpg","\\Day567\\Java\\EventThree.txt","Java.png","Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
 	}
 
 }

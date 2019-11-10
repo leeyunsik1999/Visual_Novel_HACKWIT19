@@ -20,6 +20,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 
 public class DialogueController extends Menu implements Initializable{
@@ -62,7 +64,17 @@ public class DialogueController extends Menu implements Initializable{
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		Media song = sceneOutline.getMusic();
+		musicPlayer = new MediaPlayer(song);
+		musicPlayer.setVolume(10);
+		musicPlayer.setOnEndOfMedia(new Runnable() {
+		       public void run() {
+		         musicPlayer.seek(Duration.ZERO);
+		       }
+		   });
+		musicPlayer.play();
 		currentDialogue = 0;
+		responses = new String[3];
 		genericTextBox.setEditable(false);
 		genericTextBox.autosize();
 		genericTextBox.setStyle("-fx-background-color: transparent;");
@@ -194,7 +206,6 @@ public class DialogueController extends Menu implements Initializable{
         		}
         		
         	}
-            
         }));
         timeline.setOnFinished(ActionEvent -> {
         	keyPressedNext(scrollyBoi,in);
@@ -218,7 +229,11 @@ public class DialogueController extends Menu implements Initializable{
                 			if(s.contains("2")) {
                 				setChoicePress2(in);
                 			}else {
-                    			setChoicePress3(in);
+                				if(responses[0] != null) {
+                					setChoicePress3(in);
+                				} else {
+                					setChoiceGirl(in);
+                				}
                 			}
                 			
                 			
@@ -252,7 +267,10 @@ public class DialogueController extends Menu implements Initializable{
 			@Override
 			public void handle(MouseEvent event) {
 				switch(currentChar){
-					case "java":
+					case "Java":
+						if (AFFECTION != -500) {
+							AFFECTION++;
+						}
 						GameManager.BIAS[1][0]++;
 						removeChoice();
 						keyPressed(scrollyBoi, in);
@@ -263,7 +281,10 @@ public class DialogueController extends Menu implements Initializable{
 							e.printStackTrace();
 						}
 						break;
-					case "python":
+					case "Python":
+						if (AFFECTION != -500) {
+							AFFECTION++;
+						}
 						GameManager.BIAS[0][0]++;
 						removeChoice();
 						keyPressed(scrollyBoi, in);
@@ -274,7 +295,10 @@ public class DialogueController extends Menu implements Initializable{
 							e.printStackTrace();
 						}
 						break;
-					case "c":
+					case "C":
+						if (AFFECTION != -500) {
+							AFFECTION++;
+						}
 						GameManager.BIAS[2][0]++;
 						removeChoice();
 						keyPressed(scrollyBoi, in);
@@ -296,7 +320,7 @@ public class DialogueController extends Menu implements Initializable{
 			@Override
 			public void handle(MouseEvent event) {
 				switch(currentChar){
-					case "java":
+					case "Java":
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
@@ -306,7 +330,7 @@ public class DialogueController extends Menu implements Initializable{
 							e.printStackTrace();
 						}
 						break;
-					case "python":
+					case "Python":
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
@@ -316,7 +340,7 @@ public class DialogueController extends Menu implements Initializable{
 							e.printStackTrace();
 						}
 						break;
-					case "c":
+					case "C":
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
@@ -329,13 +353,15 @@ public class DialogueController extends Menu implements Initializable{
 				}
 			}
 		});
-		
-		choice3Text.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
+		choice3Text.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
 				switch(currentChar) {
-					case "java":
+					case "Java":
+						if (AFFECTION != -500) {
+							AFFECTION--;
+						}
 						GameManager.BIAS[1][0]--;
 						removeChoice();
 						keyPressed(scrollyBoi, in);
@@ -346,7 +372,10 @@ public class DialogueController extends Menu implements Initializable{
 							e.printStackTrace();
 						}
 						break;
-					case "python":
+					case "Python":
+						if (AFFECTION != -500) {
+							AFFECTION--;
+						}
 						GameManager.BIAS[0][0]--;
 						removeChoice();
 						keyPressed(scrollyBoi, in);
@@ -357,7 +386,10 @@ public class DialogueController extends Menu implements Initializable{
 							e.printStackTrace();
 						}
 						break;
-					case "c":
+					case "C":
+						if (AFFECTION != -500) {
+							AFFECTION--;
+						}
 						GameManager.BIAS[2][0]--;
 						removeChoice();
 						keyPressed(scrollyBoi, in);
@@ -373,13 +405,46 @@ public class DialogueController extends Menu implements Initializable{
 		});
 	}
 	
+	public void setChoiceGirl(Scanner in) {
+		choice1Text.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+			@Override
+			public void handle(MouseEvent event) {
+				dayCheck(1);
+				removeChoice();
+			}
+				
+		});
+		
+		choice2Text.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+			@Override
+			public void handle(MouseEvent event) {
+				dayCheck(2);
+				removeChoice();
+			}
+		});
+
+		choice3Text.setOnMouseClicked(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				dayCheck(3);
+				removeChoice();
+			}
+		});
+	}
+	
+	
 	public void setChoicePress2(Scanner in) {
 		choice1Text.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
 			@Override
 			public void handle(MouseEvent event) {
 				switch(currentChar){
-					case "java":
+					case "Java":
+						if (AFFECTION != -500) {
+							AFFECTION -= 2;
+						}
 						GameManager.BIAS[1][0] -= 2;
 						removeChoice();
 						keyPressed(scrollyBoi, in);
@@ -390,7 +455,10 @@ public class DialogueController extends Menu implements Initializable{
 							e.printStackTrace();
 						}
 						break;
-					case "python":
+					case "Python":
+						if (AFFECTION != -500) {
+							AFFECTION -= 2;
+						}
 						GameManager.BIAS[0][0]-= 2;
 						removeChoice();
 						keyPressed(scrollyBoi, in);
@@ -401,7 +469,10 @@ public class DialogueController extends Menu implements Initializable{
 							e.printStackTrace();
 						}
 						break;
-					case "c":
+					case "C":
+						if (AFFECTION != -500) {
+							AFFECTION -= 2;
+						}
 						GameManager.BIAS[2][0]-= 2;
 						removeChoice();
 						keyPressed(scrollyBoi, in);
@@ -423,7 +494,10 @@ public class DialogueController extends Menu implements Initializable{
 			@Override
 			public void handle(MouseEvent event) {
 				switch(currentChar){
-					case "java":
+					case "Java":
+						if (AFFECTION != -500) {
+							AFFECTION++;
+						}
 						GameManager.BIAS[1][0]++;
 						removeChoice();
 						keyPressed(scrollyBoi, in);
@@ -434,7 +508,10 @@ public class DialogueController extends Menu implements Initializable{
 							e.printStackTrace();
 						}
 						break;
-					case "python":
+					case "Python":
+						if (AFFECTION != -500) {
+							AFFECTION++;
+						}
 						GameManager.BIAS[0][0]++;
 						removeChoice();
 						keyPressed(scrollyBoi, in);
@@ -445,7 +522,10 @@ public class DialogueController extends Menu implements Initializable{
 							e.printStackTrace();
 						}
 						break;
-					case "c":
+					case "C":
+						if (AFFECTION != -500) {
+							AFFECTION++;
+						}
 						GameManager.BIAS[2][0]++;
 						removeChoice();
 						keyPressed(scrollyBoi, in);
@@ -522,6 +602,83 @@ public class DialogueController extends Menu implements Initializable{
 		    	  e.consume();
 		        }
 		    });
+	}
+	
+	public void dayCheck(int girl) {
+		
+		switch(girl) {
+			case 1:
+				switch (BIAS[0][1]) {
+
+				case 0:
+					BIAS[0][0] = BIAS[0][0] + 1;
+					BIAS[0][1] = 1;
+					scene = new sceneOutline("SchoolGate.jpg","\\Day567\\Python\\EventOne.txt","Python.png","Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+					break;
+					
+				case 1:
+					BIAS[0][0] = BIAS[0][0] + 1;
+					BIAS[0][1] = 2;
+					scene = new sceneOutline("SchoolGate.jpg","\\Day567\\Python\\EventTwo.txt","Python.png","Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+					break;
+					
+				case 2:
+					BIAS[0][0] = BIAS[0][0] + 1;
+					BIAS[0][1] = 3;
+					scene = new sceneOutline("SchoolGate.jpg","\\Day567\\Python\\EventThree.txt","Python.png","Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+					break;
+					
+				}
+				
+			break;
+			case 2:
+				switch (BIAS[1][1]) {
+
+				case 0:
+					BIAS[1][0] = BIAS[1][0] + 1;
+					BIAS[1][1] = 1;
+					scene = new sceneOutline("SchoolGate.jpg","\\Day567\\Java\\EventOne.txt","Java.png","Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+					break;
+			
+				case 1:
+					BIAS[1][0] = BIAS[1][0] + 1;
+					BIAS[1][1] = 2;
+					scene = new sceneOutline("SchoolGate.jpg","\\Day567\\Java\\EventTwo.txt","Java.png","Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+					break;
+			
+				case 2:
+					BIAS[1][0] = BIAS[1][0] + 1;
+					BIAS[1][1] = 3;
+					scene = new sceneOutline("SchoolGate.jpg","\\Day567\\Java\\EventThree.txt","Java.png","Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+					break;
+			
+				}
+				break;
+				
+			case 3:
+				switch (BIAS[2][1]) {
+
+				case 0:
+					BIAS[2][0] = BIAS[2][0] + 1;
+					BIAS[2][1] = 1;
+					scene = new sceneOutline("SchoolGate.jpg","\\Day567\\C\\EventOne.txt","C.png","Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+					break;
+					
+				case 1:
+					BIAS[2][0] = BIAS[2][0] + 1;
+					BIAS[2][1] = 2;
+					scene = new sceneOutline("SchoolGate.jpg","\\Day567\\C\\EventOne.txt","C.png","Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+					break;
+					
+				case 2:
+					BIAS[2][0] = BIAS[2][0] + 1;
+					BIAS[2][1] = 1;
+					scene = new sceneOutline("SchoolGate.jpg","\\Day567\\C\\EventOne.txt","C.png","Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+					break;
+					
+				}
+		}
+		fadeToNowScene(AnchorBois);
 	}
 	
 	public void keyPressedNext(Parent p, Scanner in) {
