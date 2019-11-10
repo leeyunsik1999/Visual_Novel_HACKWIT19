@@ -1,0 +1,29 @@
+Encounter with Java
+-School-
+[User]: Second day of school! I wonder if I’ll see that runner again today
+-Transition to classroom-
+[???]: Is [User] here?
+[User]: Yes, that’s me.
+-Java face pops up in classroom background-
+[Java]: Hi, I’m the student council president, Java Oracle. Sorry I couldn’t show you around yesterday, I misplaced some objects in the wrong array, so that threw a lot of stuff around.
+[User]: Oh, that’s okay, I didn’t really run into any trouble.
+[Java]: Glad to hear it! Come on, I’ll show you around…
+[User]: Thank you President!
+[Java]: Please, call me Java.
+-Transitions to front of school-
+The student council president spent the morning introducing me to various departments and clubs around the school.
+[User]: The school is bigger than I thought, I’m glad to have someone showing me around.
+[Java]: My pleasure! And for our sports, we have tennis, track and field…..
+[User]: Track and field?
+[Java]: Are you interested?
+[User]: Yeah… Kinda... I’m just looking out for a club I might like to join.
+[Java]: That’s great! …. It’s not exactly a club, but the student council could use someone as enthusiastic as you!
+[User]: Really? Wouldn’t I be too inexperienced?
+[Java]: Not at all! We would love to have some fresh bloo….i mean some new students as members! We also have a club fair you can check out!
+[User]: When is that going to be?
+[Java]: It’s in just two days.
+[User]: That’s awesome! I’ll be there!
+[Java]: That’s great to hear! In the meantime do you need anything else?
+[User]: Can you show me where the library is again? I need to pick up some books for class.
+[Java]: Sure thing [user]!
+Afterwards, Java showed me where the library is, we talked a little longer, tt was mostly Java trying to recruit me to the student council, before I finally went home.

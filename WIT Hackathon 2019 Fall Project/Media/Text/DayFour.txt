@@ -1,0 +1,14 @@
+-School-
+[User]: School is finally over! I think I’m getting used to the lessons, but extra studying won’t hurt. If I remember right, the library was this way…
+-Transition to library-
+Mmm… It’s a nice library. There’s the help desk… Let’s go ask where the book is.
+[User]: “Hello, where can i find the book [String Theory]?”
+[Library person]: It should be in that section of the library.
+[User]: Thank you!
+[User]: String… string… Not char… Ah! Here it is. I’m glad it’s there.
+-C Shows up-
+[???]: String theory… I wanted that…
+[User]: Oh, were you looking for the same book? It doesn’t look like they have a second copy… you can borrow it before me.
+[???]: Really? Thanks, I’ll try my best to return the String in one piece, not a character array.
+-C goes away-
+[User]: I guess I can try to come back sometime to see if the book is still there. For now, I might as well go home.
