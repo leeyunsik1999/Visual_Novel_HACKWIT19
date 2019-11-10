@@ -1,5 +1,3 @@
-Encounter with Java
--School-
 [User]: Second day of school! I wonder if I’ll see that runner again today
 -Transition to classroom-
 [???]: Is [User] here?

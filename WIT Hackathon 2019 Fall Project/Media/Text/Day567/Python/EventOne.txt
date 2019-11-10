@@ -1,19 +1,18 @@
--Schoolgate.jpg-
-[User]: I’ll check out the track and field club!
+[User]: Iï¿½ll check out the track and field club!
 -Track.png-
-[User]: There’s a decent number of people here! I wonder what time the club starts at.
-[???]: Heeeey! Haven’t I seen you before?
+[User]: Thereï¿½s a decent number of people here! I wonder what time the club starts at.
+[???]: Heeeey! Havenï¿½t I seen you before?
 -Python joins-
-[Python]: I’m Python! Are you new around here?
-[User]: Yeah. I was looking for a club to join, and track looked like it’s not too hard to pick up.
-[Python]: It’s true, beginners can pick up the basics pretty quickly. Unlike that student council president, Java… They’re so obsessed with organizing things and having weird punctuations. We just go for it, unlike them, you know?
+[Python]: Iï¿½m Python! Are you new around here?
+[User]: Yeah. I was looking for a club to join, and track looked like itï¿½s not too hard to pick up.
+[Python]: Itï¿½s true, beginners can pick up the basics pretty quickly. Unlike that student council president, Javaï¿½ Theyï¿½re so obsessed with organizing things and having weird punctuations. We just go for it, unlike them, you know?
 Choice:
-Yeah, keeping things simple and straightforward is the best! Overly complicating things isn’t fun. (+1)
-It does make sense to keep everything cleaner, I guess. Organization has its uses from time to time, I feel like it’d be best if we could have both. (0)
-Organization makes everything so much easier, though! Simple is nice, but I feel like that’s not important. (-1)
+Yeah, keeping things simple and straightforward is the best! Overly complicating things isnï¿½t fun. (+1)
+It does make sense to keep everything cleaner, I guess. Organization has its uses from time to time, I feel like itï¿½d be best if we could have both. (0)
+Organization makes everything so much easier, though! Simple is nice, but I feel like thatï¿½s not important. (-1)
 Response:
-[Python]: I’m glad you see it that way! I believe there’s only one beautiful way to do one thing. There can be other methods, but what’s the point if they’re ugly and inefficient?
-[Python]: I still prefer the simplest way, but if having both helps you, that’s fine I guess.
+[Python]: Iï¿½m glad you see it that way! I believe thereï¿½s only one beautiful way to do one thing. There can be other methods, but whatï¿½s the point if theyï¿½re ugly and inefficient?
+[Python]: I still prefer the simplest way, but if having both helps you, thatï¿½s fine I guess.
 [Python]: Hey, simplicity makes it easy to learn you know. Overly complicating stuff will just confuse you in the end.
-[User]: Well, I’ll stick around for a bit longer. I think that person is calling you, Python.
+[User]: Well, Iï¿½ll stick around for a bit longer. I think that person is calling you, Python.
 [Python]: Oh, yeah. I better get going. See you around!

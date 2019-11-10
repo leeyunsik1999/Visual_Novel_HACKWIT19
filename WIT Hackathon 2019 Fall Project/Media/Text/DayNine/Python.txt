@@ -1,0 +1,10 @@
+Yesterday was a lot of fun with [Python], I’m glad she invited me to join her club, but I don’t really know if I have what it takes.
+Speak of the devil, here she is now.
+[Python] Appears
+[Python]: Hey [User]! Thank you for meeting me yesterday, it was a lot of fun.
+[User]: I should be thanking you! 
+[Python]: So, what’s your thoughts on joining?
+[User]: Yeah! The club seems like a lot of fun, but I’m still not totally sure.
+[Python]: How about we get lunch together tomorrow? At the roof of the school? The view’s pretty nice there.
+[User]: Sure thing! I’ll see you there tomorrow.
+[Python]: Okay! I’ll see you later.

@@ -1,4 +1,3 @@
--School-
 [User]: The quiz is overrrr! Studying helped out! I wonder how Python did. I guess I should head over to the field!
 -Field-
 [User]: Hey Pythonnnn!

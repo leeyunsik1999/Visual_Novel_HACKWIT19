@@ -1,4 +1,3 @@
--School rooftop-
 [Python]: Hey [User], thanks for coming up here to meet me!
 [User]: Yeah of course, thanks for inviting me. I didn't realize we had such an awesome view!
 [Python]: Yeah, but that's not why I wanted to bring you here, I actually had a question!
@@ -9,7 +8,6 @@
 [User]: Oh, ok. What did you have in mind? 
 [Python]: Alright, I just need you to answer one question about me, so.
 [Python]: What would you use to get the squares of every even number from one to ten the fastest?
-
 Choice:
 ***
 new_list = []

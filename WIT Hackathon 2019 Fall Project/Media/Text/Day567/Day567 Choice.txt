@@ -1,6 +1,6 @@
 -Schoolgate.jpg-
 [User]: I have some time.. I should check out some clubs!
-[User]: I wonder where I should go…
+[User]: I wonder where I should goï¿½
 Choice:
 The track
 Student Council Room

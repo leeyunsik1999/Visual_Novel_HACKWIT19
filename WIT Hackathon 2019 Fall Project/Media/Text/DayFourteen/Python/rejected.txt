@@ -1,4 +1,3 @@
--Classroom-
 [User]: Hey Python!
 [Python]: Oh, hey [User].
 [User]: Any news about my club application yet?
