@@ -2,6 +2,7 @@
 -Track.png-
 [User]: Huh, it seems like a race is going on. Python is running next! 
 [User]: Python! You won!
+-Python joins-
 [Python]: You were watching? Hehe, thanks! Everyone else was fixated on making really complicated training routines, and I think that threw them off a bit. I just followed the basics; simpler the better!
 Choice:
 It's easier to concentrate if it's simple, after all. Nice work!

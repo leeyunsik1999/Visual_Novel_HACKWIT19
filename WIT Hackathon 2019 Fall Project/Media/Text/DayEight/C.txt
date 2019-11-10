@@ -3,6 +3,7 @@
 -Diner.jpg-
 [C]: Hey [User]! Over here!
 [User]: Hey C! 
+-C joins-
 [C]: Thanks for coming today! This is my favorite restaurant in town. The food is really nice, and the place is very organized as well!
 [User]: I bet it is. Can't wait to eat. Anyways, what's the occasion for calling me out here?
 [C]: You look like someone who really loves books and learning new things, I was thinking that you would be perfect for the book club! Care to learn more? And perhaps join it!
@@ -10,7 +11,7 @@ Choice:
 Oh yeah, you did mention that you are in the book club. I would love to try it out, tell me more bout it!
 I don't know. It sounds like a grand time, but I'm worried that it may take up too much time
 Maybe, but it doesn't seem to suit me too well!
-Reply: 
+Response:
 [C]: I'm so glad to hear that! Ok, so basically the book club is...
 [C]: I understand, you have to focus on school after all. Though if you join the book club, I wouldn't mind helping you with school work!
 [C]: That's ok, you can always come by if you decide to change your mind

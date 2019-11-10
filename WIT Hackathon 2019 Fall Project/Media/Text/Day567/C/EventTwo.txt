@@ -2,6 +2,7 @@
 -Library.jpg-
 [User]: Hey, C! 
 [C]: Oh, hey, [user]. How was the book?
+-C joins-
 [User]: It was pretty interesting, I think I understand it a bit now.
 [C]: That's good. I gave up on understanding strings! I think i should be fine, though.
 [User]: Hmm, ok. You have that quiz in a week or so too, right?
@@ -12,7 +13,7 @@ Choice:
 <%, %>! I was studying this last night!
 Was it <:, :>?
 That's such an easy question! You can't! What kind of dumb person would replace that with anything?
-Reply:
+Response:
 [C]: Oh, you actually got it! That's correct.
 [C]: Close, but not quite. That's for replacing [], you need <%,%> for {}.
 [C]: ! There's more than one way to do anything, you know? You should go study a bit more.

@@ -10,6 +10,7 @@
 [Java]: Please, call me Java.
 -Schoolgate.jpg-
 The student council president spent the morning introducing me to various departments and clubs around the school.
+-Java joins-
 [User]: The school is bigger than I thought, I'm glad to have someone showing me around.
 [Java]: My pleasure! And for our sports, we have tennis, track and field!..
 [User]: Track and field?

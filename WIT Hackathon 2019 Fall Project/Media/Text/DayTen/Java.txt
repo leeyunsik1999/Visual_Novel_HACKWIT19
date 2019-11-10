@@ -1,3 +1,4 @@
+-Java joins-
 [Java]: Hey [User], thanks for coming up here to meet me!
 [User]: Yeah of course, thanks for inviting me. I didn't realize we had such an awesome view!
 [Java]: Yeah, but that's not why I wanted to bring you here, I actually had a question!
@@ -8,18 +9,9 @@
 [User]: Oh, ok. What did you have in mind? 
 [Java]: Alright, I just need you to answer one question about me, so.
 [Java]: If footBall and tennisBall are subclasses of genericBall, how would they be able to call the private variable diameter?
-Choice:
-***
--You can call the variable directly by using this.diameter, because the subclass has access to the variables of the superclass
-***
--2
-***
--You have to create a public getDiameter() method, then pass the private variable as a return
-***
-+1
-Replies:
+Choice: 2
+You can call the variable directly by using this.diameter, because the subclass has access to the variables of the superclass
+You have to create a public getDiameter() method, then pass the private variable as a return
+Response: 2
 [Java]: Mmm! That's not quite right. Since the variable is private, a subclass would not be able to access it.
 [Java]: Yes! I see that you are well-organized in your thought process. That's good!
-
-
-

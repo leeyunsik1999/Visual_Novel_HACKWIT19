@@ -1,6 +1,7 @@
 [User]: The quiz is overrrr! Studying helped out! I wonder how Python did. I guess I should head over to the field!
 -Track.png-
 [User]: Hey Pythonnnn!
+-Python joins-
 [Python]: Hey User! What's up?
 [User]: I was going to talk to you about the quiz! Was wondering how you did.
 [Python]: Ehhh, Not that well. I was preparing for the race I have tomorrow, you see.
@@ -9,5 +10,3 @@
 [Python]: Hehe, thanks~!
 [User]: I'll see you tomorrow then! Good luck!!
 [Python]: Thanks!
-
-

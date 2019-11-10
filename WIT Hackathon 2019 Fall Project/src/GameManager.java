@@ -33,6 +33,7 @@ public class GameManager {
 	public void generate(Stage stage) { 
 		Parent root;
 		DAY++;
+		System.out.printf("Day: %d%n", DAY);
 		dayHandler();
 		try {
 			root = FXMLLoader.load(getClass().getResource("DialogueGUI.fxml"));
@@ -98,7 +99,7 @@ public class GameManager {
 				ROUTE = "Java";
 				break;
 			case 3:
-				scene = new sceneOutline("Schoolgate.png", "DayFour.txt", "C.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+				scene = new sceneOutline("Schoolgate.jpg", "DayFour.txt", "C.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
 				ROUTE = "C";
 				break;
 			case 4:
@@ -181,17 +182,7 @@ public class GameManager {
 			}
 				break;
 			case 12:
-				switch(ROUTE) {
-				case "Python":
-					scene = new sceneOutline("Clubfair.PNG", "\\DayThirteen\\Python.txt", "none", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
-					break;
-				case "Java":
-					scene = new sceneOutline("Clubfair.PNG", "\\DayThirteen\\Java.txt", "none", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
-					break;
-				case "C":
-					scene = new sceneOutline("Clubfair.PNG", "\\DayThirteen\\C.txt", "none", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
-					break;
-			}
+				scene = new sceneOutline("Clubfair.PNG", "\\DayThirteen.txt", "none", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
 				break;
 			case 13:
 				switch(ROUTE) {
@@ -214,6 +205,9 @@ public class GameManager {
 						scene = new sceneOutline("Userroom.jpg", "\\DayFourteen\\C\\declined.txt", "none", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
 					break;
 			}
+				break;
+			default:
+				scene = new sceneOutline("Userroom.jpg", "\\Thankyou.txt", String.format("%s.png", ROUTE), "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
 				break;
 		}
 	}

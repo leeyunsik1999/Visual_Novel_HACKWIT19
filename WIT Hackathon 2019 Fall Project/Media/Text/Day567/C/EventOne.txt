@@ -1,6 +1,7 @@
 [User]:I'll check the library. That person might have returned the book by now.
 -Library.jpg-
 [???]: Oh, it's you.
+-C joins-
 [User]: Hey! Did you finish the book yet?
 [C]: I tried, but I don't think I can understand strings after all. I'm C, by the way.
 [User]: We never introduced ourselves, have we? Well, I'm User. Nice to meet you.
@@ -12,5 +13,8 @@ Choice:
 Maybe show it as a collection of characters? You know, like an array!
 Hmm! I don't know, I'll read the book and get back to you on that.
 I would go to the teacher and ask him to help with Strings. I'm not too familiar with it myself.
+Response:
+[C]: I guess! I'll try that. Well, here's the book. I'm a part of the book club, so if you have any more ideas, you can come find me here.
+[C]: I guess! I'll try that. Well, here's the book. I'm a part of the book club, so if you have any more ideas, you can come find me here.
 [C]: I guess! I'll try that. Well, here's the book. I'm a part of the book club, so if you have any more ideas, you can come find me here.
 [User]: Thanks! I'll give it a read.

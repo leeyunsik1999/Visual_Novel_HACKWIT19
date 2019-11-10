@@ -13,6 +13,8 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
@@ -21,7 +23,6 @@ public class slowPrint {
 	private static BooleanProperty readyForInput = new SimpleBooleanProperty(false);
 	private static int delay = 0;
 	public static Timeline printer;
-	public static boolean Stop = false;
 	
 	public static void setDelay(int newDelay) {
 		delay = newDelay;
@@ -46,7 +47,7 @@ public class slowPrint {
 		}
 	}
 	
-	public static void autoFormat(String sentence, TextArea textbox,ScrollPane scrollyBoi, int d, int maxSentenceLength) throws InterruptedException{
+	public static Timeline autoFormat(String sentence, TextArea textbox,ScrollPane scrollyBoi, int d, int maxSentenceLength) throws InterruptedException{
 		textbox.setText("");
 		
 		ArrayList<String> words = new ArrayList<String>();
@@ -83,7 +84,7 @@ public class slowPrint {
 		for(int i = totalTL.size()-1; i >= 0; i--) {
 			applyFinish(i, totalTL);
 		}
-		totalTL.get(0).play();
+		return totalTL.get(0);
 	}
 	
 	private static void applyFinish(int index, ArrayList<Timeline> totalTL) {
@@ -100,10 +101,34 @@ public class slowPrint {
         Duration frame = delayBetweenMessages;
         timeline.getKeyFrames().add(new KeyFrame(frame, e -> printer = timeline));
         for(char c: word.toCharArray()) {
-        	timeline.getKeyFrames().add(new KeyFrame(frame, e -> {if(!Stop){textbox.appendText(String.format("%c" , c));}else{timeline.stop();}}));
+        	timeline.getKeyFrames().add(new KeyFrame(frame, e -> {
+        		scrollyBoi.setOnKeyPressed(new EventHandler<KeyEvent>() {
+      		      @Override
+      		      public void handle(KeyEvent e) {
+      		    	  if(e.getCode() == KeyCode.ESCAPE) {
+      		    		  timeline.setOnFinished(ActionEvent -> {timeline.stop();});
+      		    		  timeline.stop();
+      		    	  }
+      		    	  e.consume();
+      		        }
+      		    });
+        		textbox.appendText(String.format("%c" , c));
+        		}));
             frame = frame.add(delayBetweenMessages);
         }
-        timeline.getKeyFrames().add(new KeyFrame(frame, e -> {if(!Stop){textbox.appendText(String.format("%n"));}else{timeline.stop();}}));
+        timeline.getKeyFrames().add(new KeyFrame(frame, e -> {
+    		scrollyBoi.setOnKeyPressed(new EventHandler<KeyEvent>() {
+  		      @Override
+  		      public void handle(KeyEvent e) {
+  		    	  if(e.getCode() == KeyCode.ESCAPE) {
+  		    		  timeline.setOnFinished(ActionEvent -> {timeline.stop();});
+  		    		  timeline.stop();
+  		    	  }
+  		    	  e.consume();
+  		        }
+  		    });
+    		textbox.appendText(String.format("%n"));
+    		}));
         frame = frame.add(delayBetweenMessages);
         scrollyBoi.setVvalue(0);
         
@@ -122,7 +147,19 @@ public class slowPrint {
         Duration frame = delayBetweenMessages;
         timeline.getKeyFrames().add(new KeyFrame(frame, e -> printer = timeline));
         for(char c: word.toCharArray()) {
-        	timeline.getKeyFrames().add(new KeyFrame(frame, e -> {if(!Stop){textbox.appendText(String.format("%c" , c));}else{timeline.stop();}}));
+        	timeline.getKeyFrames().add(new KeyFrame(frame, e -> {
+        		textbox.setOnKeyPressed(new EventHandler<KeyEvent>() {
+      		      @Override
+      		      public void handle(KeyEvent e) {
+      		    	  if(e.getCode() == KeyCode.ESCAPE) {
+      		    		  timeline.setOnFinished(ActionEvent -> {timeline.stop();});
+      		    		  timeline.stop();
+      		    	  }
+      		    	  e.consume();
+      		        }
+      		    });
+        		textbox.appendText(String.format("%c" , c));
+        		}));
             frame = frame.add(delayBetweenMessages);
         }
         

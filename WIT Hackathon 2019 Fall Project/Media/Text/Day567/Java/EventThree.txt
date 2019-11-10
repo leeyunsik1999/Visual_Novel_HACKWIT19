@@ -1,6 +1,7 @@
 [User]: I don't really know what to do now, maybe I'll help Java with the club fair
 -Clubroom.jpg-
 [User]: Java? Hello? Java? Is that you in the paper pile?
+-Java joins- 
 [Java]: *stumbles awkwardly* [User]? Hi! Umm!.. I have a bit too much of club fair entries, but my drawers don't have space for them. I tried stuffing them but that didn't work.
 [User]: That sounds rough.
 [User]: *helps Java organize the request in a stack* So what do we do with these now?
@@ -9,7 +10,7 @@ Choice:
 We can report to the school that the entries are too much for the club room
 We can try to get more drawers?
 We can try to stuff them in the drawers again
-Reply:
+Response:
 Yeah, maybe the school would know what to do with them
 I don't think the clubroom has any more space for drawers, let's report this to the school 
 The only way that can happen is if we remove some entries from the drawer. I think we should report this to the school

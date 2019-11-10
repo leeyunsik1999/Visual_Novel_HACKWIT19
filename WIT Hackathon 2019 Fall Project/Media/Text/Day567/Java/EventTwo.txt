@@ -1,6 +1,7 @@
 [User]: The student council was interesting the last time I went there, I guess I will check it out again
 -Clubroom.jpg-
 [User]: Hey Java, anything interesting happening today?
+-Java joins- 
 [Java]: Oh hey [User], fancy seeing you again.
 [Java]: We're approving club request forms right now.
 [User]: What are club request forms?
@@ -13,7 +14,7 @@ Choice:
 I guess it makes sense, the requests have to be formatted correctly or nothing will make sense after all
 That's oddly specific, but I guess that's just how it works
 It's a bit unnecessary I think
-Reply:
+Response:
 I agree with you, rules exist for a reason!
 Yeah
 I think rules exist for a reason, but to each their own 

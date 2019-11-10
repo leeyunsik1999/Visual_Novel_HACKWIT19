@@ -1,6 +1,7 @@
 [User]: The quiz is overrrr! Studying helped out! I wonder how Java did. I guess I should head over to the student council room!
 -Clubroom.jpg-
 [User]: Hey Java!
+-Java joins-
 [Java]: Hey User! What’s up?
 [User]: I was going to talk to you about the quiz! Was wondering how you did.
 [Java]: I did pretty good

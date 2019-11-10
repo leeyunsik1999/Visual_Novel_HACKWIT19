@@ -20,8 +20,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 
 public class DialogueController extends Menu implements Initializable{
@@ -64,17 +62,13 @@ public class DialogueController extends Menu implements Initializable{
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		Media song = sceneOutline.getMusic();
-		musicPlayer = new MediaPlayer(song);
-		musicPlayer.setVolume(10);
-		musicPlayer.setOnEndOfMedia(new Runnable() {
-		       public void run() {
-		         musicPlayer.seek(Duration.ZERO);
-		       }
-		   });
-		musicPlayer.play();
+		changeSong(sceneOutline.getMusic());
+		emptyKeyPressed(scrollyBoi);
 		currentDialogue = 0;
 		responses = new String[3];
+		responses[0] = "";
+		responses[1] = "";
+		responses[2] = "";
 		genericTextBox.setEditable(false);
 		genericTextBox.autosize();
 		genericTextBox.setStyle("-fx-background-color: transparent;");
@@ -132,7 +126,6 @@ public class DialogueController extends Menu implements Initializable{
 						responses[1] = in.nextLine();
 						responses[2] = in.nextLine();
 					}
-					
 				}else {
 					dialogue.add(s);
 				}
@@ -149,7 +142,6 @@ public class DialogueController extends Menu implements Initializable{
 	
 	public void printDialogue(Scanner in) {
 		runningDialogue = new Timeline();
-		slowPrint.Stop = false;
 		Timeline timeline = new Timeline();
         timeline.getKeyFrames().add(new KeyFrame(Duration.ONE, e -> {
         	if(!dialogue.get(currentDialogue).equals("")) {
@@ -161,13 +153,19 @@ public class DialogueController extends Menu implements Initializable{
         			if(dialogue.get(currentDialogue).contains("2")) {
         				setChoicePress2(in);
         			}else {
-            			setChoicePress3(in);
+        				if(currentDialogue >= dialogue.size() - 1){
+        					setChoiceGirl(in);
+        				} else {
+        					setChoicePress3(in);
+        				}
         			}
         			
         			
         		}else if(dialogue.get(currentDialogue).startsWith("-") && dialogue.get(currentDialogue).endsWith("-")){
         			String dia = dialogue.get(currentDialogue);
-        			if(dia.contains("leaves")) {
+        			if(dia.contains("stop")) {
+        				System.exit(0);
+        			}else if(dia.contains("leaves")) {
         				fadeChar(characterImage ,false);
         			}else if(dia.contains("joins")) {
         				int lastIndex = 1;
@@ -190,7 +188,8 @@ public class DialogueController extends Menu implements Initializable{
         			currentDialogue++;
         			try {
             			keyPressed(scrollyBoi, in);
-                        slowPrint.autoFormat(dialogue.get(currentDialogue), genericTextBox, scrollyBoi, 30, 90);
+            			runningDialogue = slowPrint.autoFormat(dialogue.get(currentDialogue), genericTextBox, scrollyBoi, 30, 90);
+						runningDialogue.play();
                     } catch (InterruptedException e1) {
                         // TODO Auto-generated catch block
                         e1.printStackTrace();
@@ -198,7 +197,8 @@ public class DialogueController extends Menu implements Initializable{
         		} else {
         			try {
             			keyPressed(scrollyBoi, in);
-                        slowPrint.autoFormat(dialogue.get(currentDialogue), genericTextBox, scrollyBoi, 30, 90);
+            			runningDialogue = slowPrint.autoFormat(dialogue.get(currentDialogue), genericTextBox, scrollyBoi, 30, 90);
+						runningDialogue.play();
                     } catch (InterruptedException e1) {
                         // TODO Auto-generated catch block
                         e1.printStackTrace();
@@ -211,48 +211,62 @@ public class DialogueController extends Menu implements Initializable{
         	keyPressedNext(scrollyBoi,in);
         });
 		runningDialogue = timeline;
+		timeline = null;
 		runningDialogue.play();
 	}
 	
 	public void printDialogueFast(Scanner in) {
-		runningDialogue = new Timeline();
-		slowPrint.Stop = false;
-		Timeline timeline = new Timeline();
-        timeline.getKeyFrames().add(new KeyFrame(Duration.ONE, e -> {
-        		for(String s: dialogue) {
-        			if(!s.equals("")) {
-                		if(s.contains("Choice:")) {
-                			choiceBox.setDisable(false);
-                			choiceBox.setOpacity(1);
-                			choiceBox.toFront();
-                			emptyKeyPressed(scrollyBoi);
-                			if(s.contains("2")) {
-                				setChoicePress2(in);
-                			}else {
-                				if(responses[0] != null) {
-                					setChoicePress3(in);
-                				} else {
-                					setChoiceGirl(in);
-                				}
-                			}
-                			
-                			
+		currentDialogue = 0;
+		for(String s: dialogue) {
+			currentDialogue++;
+			if(!s.equals("")) {
+        		if(s.contains("Choice:")) {
+        			choiceBox.setDisable(false);
+        			choiceBox.setOpacity(1);
+        			choiceBox.toFront();
+        			emptyKeyPressed(scrollyBoi);
+        			if(s.contains("2")) {
+        				setChoicePress2(in);
+        			}else {
+
+        				if(currentDialogue >= dialogue.size() - 1){
+        					setChoiceGirl(in);
+        				} else {
+        					setChoicePress3(in);
+        				}
+
+        			}
+        			
+        		}else {
+            		int lastIndex = 0;
+            		ArrayList<String> sentence = new ArrayList<String>();
+            		char[] sChar = s.toCharArray();
+            		for(int j = 0; j < sChar.length; j++) {
+            			if(sChar[j] == ' ') {
+            				sentence.add(s.substring(lastIndex, j));
+            				lastIndex = j+1;
+            			}else if(sChar[j] == sChar[s.length()-1] && lastIndex != j) {
+            				sentence.add(s.substring(lastIndex, j));
+            			}
+            		}
+            		int sentenceLength = 0;
+            		int sentenceMax = 90;
+            		String text = "";
+            		for(String temp: sentence) {
+            			if(sentenceLength + temp.length() > sentenceMax) {
+                			text += String.format("%s%n%s", genericTextBox.getText(), temp);
+                			sentenceLength = temp.length();
                 		}else {
-                			try {
-                    			keyPressedNext(scrollyBoi, in);
-                                slowPrint.autoFormat(s, genericTextBox, scrollyBoi, 1, 90);
-                            } catch (InterruptedException e1) {
-                                // TODO Auto-generated catch block
-                                e1.printStackTrace();
-                            }
+                			text += String.format("%s %s", genericTextBox.getText(), temp);
+                			sentenceLength += temp.length();
                 		}
+            		}
+            		genericTextBox.setText(text);
+            		text = null;
+            		keyPressedNext(scrollyBoi, in);
         		}
-        	
-        	}
-            
-        }));
-		runningDialogue = timeline;
-		runningDialogue.play();
+			}
+		}
 	}
 	
 	public void removeChoice() {
@@ -262,6 +276,7 @@ public class DialogueController extends Menu implements Initializable{
 	}
 	
 	public void setChoicePress3(Scanner in) {
+		System.out.printf("Choosing Choice 3%n");
 		choice1Text.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
 			@Override
@@ -275,7 +290,8 @@ public class DialogueController extends Menu implements Initializable{
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
-							slowPrint.autoFormat(responses[0], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue = slowPrint.autoFormat(responses[0], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue.play();
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -289,7 +305,8 @@ public class DialogueController extends Menu implements Initializable{
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
-							slowPrint.autoFormat(responses[0], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue = slowPrint.autoFormat(responses[0], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue.play();
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -303,7 +320,8 @@ public class DialogueController extends Menu implements Initializable{
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
-							slowPrint.autoFormat(responses[0], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue = slowPrint.autoFormat(responses[0], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue.play();
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -324,7 +342,8 @@ public class DialogueController extends Menu implements Initializable{
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
-							slowPrint.autoFormat(responses[1], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue = slowPrint.autoFormat(responses[1], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue.play();
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -334,7 +353,8 @@ public class DialogueController extends Menu implements Initializable{
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
-							slowPrint.autoFormat(responses[1], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue = slowPrint.autoFormat(responses[1], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue.play();
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -344,7 +364,8 @@ public class DialogueController extends Menu implements Initializable{
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
-							slowPrint.autoFormat(responses[1], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue = slowPrint.autoFormat(responses[1], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue.play();
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -366,7 +387,8 @@ public class DialogueController extends Menu implements Initializable{
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
-							slowPrint.autoFormat(responses[2], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue = slowPrint.autoFormat(responses[2], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue.play();
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -380,7 +402,8 @@ public class DialogueController extends Menu implements Initializable{
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
-							slowPrint.autoFormat(responses[2], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue = slowPrint.autoFormat(responses[2], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue.play();
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -394,7 +417,8 @@ public class DialogueController extends Menu implements Initializable{
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
-							slowPrint.autoFormat(responses[2], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue = slowPrint.autoFormat(responses[2], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue.play();
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -406,6 +430,7 @@ public class DialogueController extends Menu implements Initializable{
 	}
 	
 	public void setChoiceGirl(Scanner in) {
+		System.out.printf("Choosing Girl%n");
 		choice1Text.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
 			@Override
@@ -436,6 +461,7 @@ public class DialogueController extends Menu implements Initializable{
 	
 	
 	public void setChoicePress2(Scanner in) {
+		System.out.printf("Choosing Choice 2%n");
 		choice1Text.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
 			@Override
@@ -449,7 +475,8 @@ public class DialogueController extends Menu implements Initializable{
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
-							slowPrint.autoFormat(responses[0], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue = slowPrint.autoFormat(responses[0], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue.play();
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -463,7 +490,8 @@ public class DialogueController extends Menu implements Initializable{
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
-							slowPrint.autoFormat(responses[0], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue = slowPrint.autoFormat(responses[0], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue.play();
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -477,7 +505,8 @@ public class DialogueController extends Menu implements Initializable{
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
-							slowPrint.autoFormat(responses[0], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue = slowPrint.autoFormat(responses[0], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue.play();
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -502,7 +531,8 @@ public class DialogueController extends Menu implements Initializable{
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
-							slowPrint.autoFormat(responses[1], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue = slowPrint.autoFormat(responses[1], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue.play();
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -516,7 +546,8 @@ public class DialogueController extends Menu implements Initializable{
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
-							slowPrint.autoFormat(responses[1], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue = slowPrint.autoFormat(responses[1], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue.play();
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -530,7 +561,8 @@ public class DialogueController extends Menu implements Initializable{
 						removeChoice();
 						keyPressed(scrollyBoi, in);
 						try {
-							slowPrint.autoFormat(responses[1], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue = slowPrint.autoFormat(responses[1], genericTextBox, scrollyBoi, 30, 90);
+							runningDialogue.play();
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -544,22 +576,11 @@ public class DialogueController extends Menu implements Initializable{
 	}
 	
 	public void skip(Scanner in) {
+		
 		runningDialogue.stop();
-		slowPrint.Stop = true;
-		slowPrint.printer.stop();
-		slowPrint.printer.stop();
-		slowPrint.printer.stop();
-		slowPrint.printer.stop();
-		slowPrint.printer.stop();
-		slowPrint.printer.stop();
-		slowPrint.printer.stop();
-		slowPrint.printer.stop();
-		slowPrint.printer.stop();
-		slowPrint.printer.stop();
-		slowPrint.printer.stop();
 		
 		if(currentDialogue < dialogue.size()-1) {
-			System.out.print("Next Dialogue");
+			System.out.printf("Next Dialogue%n");
 			currentDialogue += 1;
 			printDialogue(in);
 		}else {
@@ -575,6 +596,13 @@ public class DialogueController extends Menu implements Initializable{
 		    	  e.consume();
 		        }
 		    });
+		
+		p.setOnKeyPressed(new EventHandler<KeyEvent>() {
+		      @Override
+		      public void handle(KeyEvent e) {
+		    	  e.consume();
+		        }
+		    });
 	}
 	
 	public void keyPressed(Parent p, Scanner in) {
@@ -583,21 +611,9 @@ public class DialogueController extends Menu implements Initializable{
 		      @Override
 		      public void handle(KeyEvent e) {
 		    	  if(e.getCode() == KeyCode.ESCAPE) {
-		    		runningDialogue.stop();
-		    		slowPrint.Stop = true;
-		    		slowPrint.printer.stop();
-		    		slowPrint.printer.stop();
-		    		slowPrint.printer.stop();
-		    		slowPrint.printer.stop();
-		    		slowPrint.printer.stop();
-		    		slowPrint.printer.stop();
-		    		slowPrint.printer.stop();
-		    		slowPrint.printer.stop();
-		    		slowPrint.printer.stop();
-		    		slowPrint.printer.stop();
-		    		slowPrint.printer.stop();
-		    		
-		    		printDialogueFast(in);
+		    		  runningDialogue.stop();
+		    		  skip(in);
+		    		  //printDialogueFast(in);
 		    	  }
 		    	  e.consume();
 		        }
@@ -630,7 +646,7 @@ public class DialogueController extends Menu implements Initializable{
 					
 				}
 				
-			break;
+				break;
 			case 2:
 				switch (BIAS[1][1]) {
 
@@ -667,16 +683,17 @@ public class DialogueController extends Menu implements Initializable{
 				case 1:
 					BIAS[2][0] = BIAS[2][0] + 1;
 					BIAS[2][1] = 2;
-					scene = new sceneOutline("SchoolGate.jpg","\\Day567\\C\\EventOne.txt","C.png","Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+					scene = new sceneOutline("SchoolGate.jpg","\\Day567\\C\\EventTwo.txt","C.png","Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
 					break;
 					
 				case 2:
 					BIAS[2][0] = BIAS[2][0] + 1;
 					BIAS[2][1] = 1;
-					scene = new sceneOutline("SchoolGate.jpg","\\Day567\\C\\EventOne.txt","C.png","Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+					scene = new sceneOutline("SchoolGate.jpg","\\Day567\\C\\EventThree.txt","C.png","Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
 					break;
 					
 				}
+				break;
 		}
 		fadeToNowScene(AnchorBois);
 	}

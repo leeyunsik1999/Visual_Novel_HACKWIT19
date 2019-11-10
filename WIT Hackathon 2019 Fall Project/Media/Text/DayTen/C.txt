@@ -1,3 +1,4 @@
+-C joins-
 [C]: Hey [User], thanks for coming up here to meet me!
 [User]: Yeah of course, thanks for inviting me. I didn't realize we had such an awesome view!
 [C]: Yeah, but that's not why I wanted to bring you here, I actually had a question!
@@ -8,16 +9,10 @@
 [User]: Oh, ok. What did you have in mind? 
 [C]: Alright, I just need you to answer one question about me, so.
 [C]: I was given an int a, and I want to print out a+1, what should I do?
-Choice:
-***
--printf(a++);
-***
--2
-***
--printf(++a);
-***
-+1
-Replies:
+Choice: 2
+printf(a++);
+printf(++a);
+Response: 2
 [C]: Mmm! That's not quite right. Since a++ returns the old value of a, then increment it, so printf(a++) would just print a
 [C]: Yes! That's the correct answer, it's such a small mistake that people usually get wrong. I'm impressed with how well you remember things!
 

@@ -1,6 +1,7 @@
 I can hardly wait to find out if I got into the club! I should hurry to school.
 -Track.png- 
-[Python]: Hey! [User], over here! 
+[Python]: Hey! [User], over here!
+-Python joins- 
 [User]: Oh hey Python, any news on my club application?
 [Python]: Actually, yes! I wanted to be the one to tell you that!
 [Python]: You're totally in! 

@@ -1,6 +1,7 @@
 [User]: The track club was fun. Let's go there again!
 -Track.png-
 [Python]: Heeeeey, [User]!
+-Python joins-
 [User]: Oh, hi Python! Is it okay to not be with the group there? It looks like they're doing something.
 [Python]: Yeah! I was just taking a little break. I saw you and was wondering if you wanted someone to show you around, you see! I totally didn't want to slack off or anything...
 [User]: Heh, so that's your real motive. No matter, I wanted to look around anyway, and having a club member show me around would be great.

@@ -1,6 +1,7 @@
 I can hardly wait to find out if I got into the club! I should hurry to school.
 -Track.png-
 [User]: Hey Python!
+-Python joins-
 [Python]: Oh, hey [User].
 [User]: Any news about my club application yet?
 [Python]: Yeah! I'm sorry [User], but it looks like we don't have any room in the club for you this year.
