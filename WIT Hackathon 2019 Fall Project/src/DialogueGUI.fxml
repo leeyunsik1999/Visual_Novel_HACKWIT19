@@ -20,14 +20,14 @@
                         <Image url="@../Media/Image/Background/Cafe.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="characterImage" fitHeight="307.0" fitWidth="286.0" layoutX="299.0" layoutY="60.0" pickOnBounds="true">
+                  <ImageView fx:id="characterImage" fitHeight="521.0" fitWidth="403.0" layoutX="235.0" layoutY="60.0" pickOnBounds="true">
                      <image>
                         <Image url="@../Media/Image/Character/PythonGIrl.png" />
                      </image>
                   </ImageView>
-                  <ScrollPane fx:id="scrollyBoi" layoutY="367.0" pickOnBounds="false" prefHeight="214.0" prefWidth="872.0">
+                  <ScrollPane fx:id="scrollyBoi" layoutY="367.0" opacity="0.56" pickOnBounds="false" prefHeight="214.0" prefWidth="872.0" style="-fx-background-color: BLACK;">
                      <content>
-                        <TextArea fx:id="genericTextBox" prefHeight="210.0" prefWidth="870.0">
+                        <TextArea fx:id="genericTextBox" editable="false" prefHeight="207.0" prefWidth="870.0" style="-fx-background-color: BLACK; -fx-border-color: BLACK;">
                            <font>
                               <Font size="20.0" />
                            </font>

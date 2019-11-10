@@ -28,6 +28,7 @@ public class DialogueController extends Menu implements Initializable{
 	ArrayList<String> dialogue = new ArrayList<>();
 	int currentDialogue = 0;
 	String currentChar;
+	String[] responses = new String[3];
 	
 	@FXML
 	private TextArea genericTextBox;
@@ -72,12 +73,23 @@ public class DialogueController extends Menu implements Initializable{
 			Scanner in = new Scanner(sceneOutline.getDialogue());
 			while(in.hasNext()) {
 				String s = in.nextLine();
-				if(s.equals("Choice:")) {
-					choice1Text.setText(in.next());
-					choice2Text.setText(in.next());
-					choice3Text.setText(in.next());
+				if(s.contains("Choice:")) {
+					if(s.contains("2")) {
+						choice1Text.setText(in.nextLine());
+						choice2Text.setText(in.nextLine());
+					}else {
+						choice1Text.setText(in.nextLine());
+						choice2Text.setText(in.nextLine());
+						choice3Text.setText(in.nextLine());
+					}
+					dialogue.add(s);
+				}else if(s.equals("Response:")) {
+					responses[0] = in.nextLine();
+					responses[1] = in.nextLine();
+					responses[2] = in.nextLine();
+				}else {
+					dialogue.add(s);
 				}
-				dialogue.add(s);
 			}
 			printDialogue(in);
 		} catch (FileNotFoundException e) {
@@ -100,14 +112,16 @@ public class DialogueController extends Menu implements Initializable{
         			choiceBox.toFront();
         			emptyKeyPressed(scrollyBoi);
         			setChoicePress(in);
+        		}else {
+        			try {
+            			keyPressed(scrollyBoi, in);
+                        slowPrint.autoFormat(dialogue.get(currentDialogue), genericTextBox, scrollyBoi, 30, 90);
+                    } catch (InterruptedException e1) {
+                        // TODO Auto-generated catch block
+                        e1.printStackTrace();
+                    }
         		}
-        		try {
-        			keyPressed(scrollyBoi, in);
-                    slowPrint.autoFormat(dialogue.get(currentDialogue), genericTextBox, scrollyBoi, 30, 90);
-                } catch (InterruptedException e1) {
-                    // TODO Auto-generated catch block
-                    e1.printStackTrace();
-                }
+        		
         	}
             
         }));
@@ -130,20 +144,35 @@ public class DialogueController extends Menu implements Initializable{
 					case "java":
 						GameManager.BIAS[1][0]++;
 						removeChoice();
-						currentDialogue += 1;
-						printDialogue(in);
+						keyPressed(scrollyBoi, in);
+						try {
+							slowPrint.autoFormat(responses[0], genericTextBox, scrollyBoi, 30, 90);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						break;
 					case "python":
 						GameManager.BIAS[0][0]++;
 						removeChoice();
-						currentDialogue += 1;
-						printDialogue(in);
+						keyPressed(scrollyBoi, in);
+						try {
+							slowPrint.autoFormat(responses[0], genericTextBox, scrollyBoi, 30, 90);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						break;
 					case "c":
 						GameManager.BIAS[2][0]++;
 						removeChoice();
-						currentDialogue += 1;
-						printDialogue(in);
+						keyPressed(scrollyBoi, in);
+						try {
+							slowPrint.autoFormat(responses[0], genericTextBox, scrollyBoi, 30, 90);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						break;
 				}
 				
@@ -158,18 +187,33 @@ public class DialogueController extends Menu implements Initializable{
 				switch(currentChar){
 					case "java":
 						removeChoice();
-						currentDialogue += 1;
-						printDialogue(in);
+						keyPressed(scrollyBoi, in);
+						try {
+							slowPrint.autoFormat(responses[1], genericTextBox, scrollyBoi, 30, 90);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						break;
 					case "python":
 						removeChoice();
-						currentDialogue += 1;
-						printDialogue(in);
+						keyPressed(scrollyBoi, in);
+						try {
+							slowPrint.autoFormat(responses[1], genericTextBox, scrollyBoi, 30, 90);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						break;
 					case "c":
 						removeChoice();
-						currentDialogue += 1;
-						printDialogue(in);
+						keyPressed(scrollyBoi, in);
+						try {
+							slowPrint.autoFormat(responses[1], genericTextBox, scrollyBoi, 30, 90);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						break;
 				}
 				
@@ -181,32 +225,43 @@ public class DialogueController extends Menu implements Initializable{
 
 			@Override
 			public void handle(MouseEvent event) {
-				switch(currentChar){
+				switch(currentChar) {
 					case "java":
 						GameManager.BIAS[1][0]--;
 						removeChoice();
-						currentDialogue += 1;
-						printDialogue(in);
+						keyPressed(scrollyBoi, in);
+						try {
+							slowPrint.autoFormat(responses[2], genericTextBox, scrollyBoi, 30, 90);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						break;
 					case "python":
 						GameManager.BIAS[0][0]--;
 						removeChoice();
-						currentDialogue += 1;
-						printDialogue(in);
+						keyPressed(scrollyBoi, in);
+						try {
+							slowPrint.autoFormat(responses[2], genericTextBox, scrollyBoi, 30, 90);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						break;
 					case "c":
 						GameManager.BIAS[2][0]--;
 						removeChoice();
-						currentDialogue += 1;
-						printDialogue(in);
+						keyPressed(scrollyBoi, in);
+						try {
+							slowPrint.autoFormat(responses[2], genericTextBox, scrollyBoi, 30, 90);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						break;
-				}
-				
+				}	
 			}
-			
 		});
-		
-		
 	}
 	
 	public void skip(Scanner in) {

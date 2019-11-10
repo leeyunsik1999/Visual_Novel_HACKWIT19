@@ -62,18 +62,19 @@ public class GameManager {
 	public void dayHandler() {
 		switch(DAY) {
 			case 0:
-				scene = new sceneOutline("Userroom.jpg", "DayOne.txt", "Error.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+				scene = new sceneOutline("Userroom.jpg", "DayOne.txt", "none", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
 				break;
 			case 1:
-				scene = new sceneOutline("Error.png", "DayTwo.txt", "JAVA.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+				scene = new sceneOutline("Error.png", "DayTwo.txt", "PythonGirl.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
 				break;
 			case 2:
-				scene = new sceneOutline("Error.png", "DayThree.txt", "JAVA.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+				scene = new sceneOutline("Error.png", "DayThree.txt", "Java.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
 				break;
 			case 3:
-				scene = new sceneOutline("Error.png", "DayFour.txt", "JAVA.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+				scene = new sceneOutline("Error.png", "DayFour.txt", "C.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
 				break;
 			case 4:
+				scene = new sceneOutline("Schoolgate.jpg", "\\Day567\\Day567 Choice.txt", "none", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
 				break;
 			case 5:
 				break;
