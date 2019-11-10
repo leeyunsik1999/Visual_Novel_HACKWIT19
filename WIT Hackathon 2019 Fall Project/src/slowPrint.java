@@ -20,6 +20,7 @@ public class slowPrint {
 	
 	private static BooleanProperty readyForInput = new SimpleBooleanProperty(false);
 	private static int delay = 0;
+	public static Timeline printer;
 	
 	public static void setDelay(int newDelay) {
 		delay = newDelay;
@@ -96,6 +97,7 @@ public class slowPrint {
         Timeline timeline = new Timeline();
         Duration delayBetweenMessages = Duration.millis(delay);
         Duration frame = delayBetweenMessages;
+        timeline.getKeyFrames().add(new KeyFrame(frame, e -> printer = timeline));
         for(char c: word.toCharArray()) {
         	timeline.getKeyFrames().add(new KeyFrame(frame, e -> textbox.appendText(String.format("%c" , c))));
             frame = frame.add(delayBetweenMessages);
@@ -117,6 +119,7 @@ public class slowPrint {
         Timeline timeline = new Timeline();
         Duration delayBetweenMessages = Duration.millis(delay);
         Duration frame = delayBetweenMessages;
+        timeline.getKeyFrames().add(new KeyFrame(frame, e -> printer = timeline));
         for(char c: word.toCharArray()) {
         	timeline.getKeyFrames().add(new KeyFrame(frame, e -> textbox.appendText(String.format("%c" , c))));
             frame = frame.add(delayBetweenMessages);

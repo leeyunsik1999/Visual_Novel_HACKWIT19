@@ -15,12 +15,13 @@ public class GameManager {
 
 	public static int[][] BIAS = new int[4][2]; // Three rows: 0 = python, 1 = java, 2 = c. Two columns: 0 = affection,
 												// 1 = days visited
-	public static int DAY = 1; // Day number
+	public static int DAY = -1; // Day number
 	public static int AFFECTION;
 	public static int VOLUME = 10;
 	public static String ROUTE;
 	public static MediaPlayer musicPlayer;
 	public static Stage game;
+	public static sceneOutline scene;
 	
 	/**
      * Main world method that generates the world in a canvas that allows the player to move around in and encounter enemies
@@ -29,6 +30,8 @@ public class GameManager {
      */
 	public void generate(Stage stage) { 
 		Parent root;
+		DAY++;
+		dayHandler();
 		try {
 			root = FXMLLoader.load(getClass().getResource("DialogueGUI.fxml"));
 			stage.setScene(new Scene(root));
@@ -57,12 +60,43 @@ public class GameManager {
 	}
 
 	public void dayHandler() {
-		for (int i = 0; i < 14; i++) {
-			if (i == 7) {
+		switch(DAY) {
+			case 0:
+				scene = new sceneOutline("Error.png", "DayOne.txt", "Error.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+				break;
+			case 1:
+				scene = new sceneOutline("Error.png", "DayTwo.txt", "JAVA.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+				break;
+			case 2:
+				scene = new sceneOutline("Error.png", "DayThree.txt", "JAVA.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+				break;
+			case 3:
+				scene = new sceneOutline("Error.png", "DayFour.txt", "JAVA.png", "Flower Garden - Yoshi's Island-[AudioTrimmer.com].mp3");
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			case 6:
+				break;
+			case 7:
 				ROUTE = secondWeekEventsHandler();
 				AFFECTION = BIAS[3][0];
-
-			}
+				break;
+			case 8:
+				break;
+			case 9:
+				break;
+			case 10:
+				break;
+			case 11:
+				break;
+			case 12:
+				break;
+			case 13:
+				break;
+			case 14:
+				break;
 		}
 	}
 
@@ -144,7 +178,7 @@ public class GameManager {
 	 * Method that uses javaFX transitions to fade out of a scene to fade into the
 	 * world scene
 	 */
-	protected void fadeToNextScene(Node n) {
+	public void fadeToNextScene(Node n) {
 		FadeTransition fadeTransition = new FadeTransition();
 		fadeTransition.setDuration(Duration.millis(1000));
 		fadeTransition.setNode(n);

@@ -38,7 +38,7 @@ public class sceneOutline {
     	FileInputStream imgIn;
 		try {
 			imgIn = new FileInputStream("Media\\Image\\Character\\" + file);
-			background = new Image(imgIn);
+			character = new Image(imgIn);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
