@@ -1,10 +1,10 @@
-Yesterday was a lot of fun with C, I’m glad she invited me to join her club, but I don’t really know if I have what it takes.
+Yesterday was a lot of fun with C, I'm glad she invited me to join her club, but I don't really know if I have what it takes.
 Speak of the devil, here she is now.
 -C joins-
 [C]: Hey [User]! Thank you for meeting me yesterday, it was a lot of fun.
 [User]: I should be thanking you! 
-[C]: So, what’s your thoughts on joining?
-[User]: Yeah! The club seems like a lot of fun, but I’m still not totally sure.
-[C]: How about we get lunch together tomorrow? At the roof of the school? The view’s pretty nice there.
-[User]: Sure thing! I’ll see you there tomorrow.
-[C]: Okay! I’ll see you later.
+[C]: So, what's your thoughts on joining?
+[User]: Yeah! The club seems like a lot of fun, but I'm still not totally sure.
+[C]: How about we get lunch together tomorrow? At the roof of the school? The view's pretty nice there.
+[User]: Sure thing! I'll see you there tomorrow.
+[C]: Okay! I'll see you later.

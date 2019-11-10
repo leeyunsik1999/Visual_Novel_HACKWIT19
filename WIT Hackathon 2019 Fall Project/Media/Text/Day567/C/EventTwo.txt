@@ -1,20 +1,20 @@
-[User]: Hm… The book club sounded interesting, I want to go and learn more about them. 
+[User]: Hm! The book club sounded interesting, I want to go and learn more about them. 
 -Library.jpg-
 [User]: Hey, C! 
 [C]: Oh, hey, [user]. How was the book?
 [User]: It was pretty interesting, I think I understand it a bit now.
-[C]: That’s good. I gave up on understanding strings… I think i should be fine, though.
+[C]: That's good. I gave up on understanding strings! I think i should be fine, though.
 [User]: Hmm, ok. You have that quiz in a week or so too, right?
 [C]: Yeah.. what about it?
 [User]: I was wondering if you could quiz me on something we need to know. I want to be prepared.
-[C]: Hmm… Well, here’s one. What can you replace {} with?
+[C]: Hmm! Well, here's one. What can you replace {} with?
 Choice:
 <%, %>! I was studying this last night!
 Was it <:, :>?
-That’s such an easy question! You can’t! What kind of dumb person would replace that with anything?
+That's such an easy question! You can't! What kind of dumb person would replace that with anything?
 Reply:
-[C]: Oh, you actually got it! That’s correct.
-[C]: Close, but not quite. That’s for replacing [], you need <%,%> for {}.
-[C]: … There’s more than one way to do anything, you know? You should go study a bit more.
-[C]: Well, it’s getting pretty late. I’m going to head home.
-[User]: Ok! I’ll see you later, then.
+[C]: Oh, you actually got it! That's correct.
+[C]: Close, but not quite. That's for replacing [], you need <%,%> for {}.
+[C]: ! There's more than one way to do anything, you know? You should go study a bit more.
+[C]: Well, it's getting pretty late. I'm going to head home.
+[User]: Ok! I'll see you later, then.

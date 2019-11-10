@@ -3,8 +3,8 @@ I can hardly wait to find out if I got into the club! I should hurry to school.
 [User]: Hey Python!
 [Python]: Oh, hey [User].
 [User]: Any news about my club application yet?
-[Python]: Yeah… I’m sorry [User], but it looks like we don’t have any room in the club for you this year.
-[User]: Oh, that’s a bummer. I was really excited too.
+[Python]: Yeah! I'm sorry [User], but it looks like we don't have any room in the club for you this year.
+[User]: Oh, that's a bummer. I was really excited too.
 [Python] Yeah, maybe you can try again next year? We can still see each other around school every now and then, right?
-[User]: Yeah, I guess you’re right.
-I never got much more familiar with Python passed a friendly smile and wave every now and then, but I guess you can’t always be friends with everybody. There’s always next year!
+[User]: Yeah, I guess you're right.
+I never got much more familiar with Python passed a friendly smile and wave every now and then, but I guess you can't always be friends with everybody. There's always next year!

@@ -1,18 +1,18 @@
-[User]: Hmm… I got a text.. Oh, It’s from Java.
-[User]: She wants to eat lunch with me today. I guess I have nothing else to do… might as well.
+[User]: Hmm! I got a text.. Oh, It's from Java.
+[User]: She wants to eat lunch with me today. I guess I have nothing else to do! might as well.
 -Diner.jpg-
 [Java]: Hey [User]! Over here!
 [User]: Hey Java! 
 [Java]: Thanks for coming today! This is my favorite restaurant in town. The food is really nice, and the place is very organized as well!
-[User]: I bet it is. Can’t wait to eat. Anyways, what’s the occasion for calling me out here?
+[User]: I bet it is. Can't wait to eat. Anyways, what's the occasion for calling me out here?
 [Java]: Oh, I was just wondering if maybe you were interested in the student council? You looked interested in the past couple days, coming to help us and all.
 Choice:
-It looked nice, I really like the work that you do and the impact you’re making. Also I love how organized everything is with you
-I don’t know. It looks fun, but it’s a bit different from what I’ve done before. I’m up for trying it out, though.
-Maybe, but it doesn’t seem to suit me too well…
+It looked nice, I really like the work that you do and the impact you're making. Also I love how organized everything is with you
+I don't know. It looks fun, but it's a bit different from what I've done before. I'm up for trying it out, though.
+Maybe, but it doesn't seem to suit me too well!
 Reply: 
 [Java]: Thank you [User], that means a lot to me
-[Java]: Yeah, it can look intimidating at first, but I think you’ll find it’s pretty easy to get the hang of.
-[Java]: That’s too bad, you would’ve been perfect for the student council
-We spoke for a little while longer, Java seemed pretty excited about me joining though, I’ll have to give her offer some more thought.
+[Java]: Yeah, it can look intimidating at first, but I think you'll find it's pretty easy to get the hang of.
+[Java]: That's too bad, you would've been perfect for the student council
+We spoke for a little while longer, Java seemed pretty excited about me joining though, I'll have to give her offer some more thought.
 

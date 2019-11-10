@@ -4,12 +4,12 @@
 [User]: Python! You won!
 [Python]: You were watching? Hehe, thanks! Everyone else was fixated on making really complicated training routines, and I think that threw them off a bit. I just followed the basics; simpler the better!
 Choice:
-It�s easier to concentrate if it�s simple, after all. Nice work!
-Complicating it when you don�t know how it works can be a negative, after all. Nice work!
+It's easier to concentrate if it's simple, after all. Nice work!
+Complicating it when you don't know how it works can be a negative, after all. Nice work!
 I think optimizing everything is the ideal way to go, but hey, it worked for you I guess. Nice work!
 Response:
 [Python]: Hehe, thanks~~! I really worked hard for this. 
 [Python]: Hehe, thanks~~! I really worked hard for this. 
-[Python]: I guess� I don�t think it works for me though. Thanks anyway.
-[Python]: I�ll be going to meet with my teammates. I�ll catch you around!
+[Python]: I guess? I don't think it works for me though. Thanks anyway.
+[Python]: I'll be going to meet with my teammates. I'll catch you around!
 [User]: All right. Have fun!

@@ -1,16 +1,16 @@
-[User]:I’ll check the library. That person might have returned the book by now.
+[User]:I'll check the library. That person might have returned the book by now.
 -Library.jpg-
-[???]: Oh, it’s you.
+[???]: Oh, it's you.
 [User]: Hey! Did you finish the book yet?
-[C]: I tried, but I don’t think I can understand strings after all. I’m C, by the way.
-[User]: We never introduced ourselves, have we? Well, I’m User. Nice to meet you.
+[C]: I tried, but I don't think I can understand strings after all. I'm C, by the way.
+[User]: We never introduced ourselves, have we? Well, I'm User. Nice to meet you.
 [User]: So, why were you looking for the String theory book?
-[C]: I just didn’t understand it in class… I can get to the character part, but I don’t get how you put it all together.
-[User]: Hey, everyone has different talents! Don’t worry about it. I’m sure you’ll find a way.
-[C]: Hmm… What do you suggest? I’ve had some ideas, but I want to know what you’re thinking.
+[C]: I just didn't understand it in class! I can get to the character part, but I don't get how you put it all together.
+[User]: Hey, everyone has different talents! Don't worry about it. I'm sure you'll find a way.
+[C]: Hmm! What do you suggest? I've had some ideas, but I want to know what you're thinking.
 Choice:
-Maybe show it as a collection of characters? You know, like an array! (+1)
-Hmm… I don’t know, I’ll read the book and get back to you on that. (0)
-I would go to the teacher and ask him to help with Strings. I’m not too familiar with it myself. (-1)
-[C]: I guess… I’ll try that. Well, here’s the book. I’m a part of the book club, so if you have any more ideas, you can come find me here.
-[User]: Thanks! I’ll give it a read.
+Maybe show it as a collection of characters? You know, like an array!
+Hmm! I don't know, I'll read the book and get back to you on that.
+I would go to the teacher and ask him to help with Strings. I'm not too familiar with it myself.
+[C]: I guess! I'll try that. Well, here's the book. I'm a part of the book club, so if you have any more ideas, you can come find me here.
+[User]: Thanks! I'll give it a read.

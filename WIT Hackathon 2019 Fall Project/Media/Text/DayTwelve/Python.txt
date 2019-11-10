@@ -2,19 +2,19 @@
 [User]: Go Python!!!!!
 *Cheering to signify the end of the race?*
 [Python]: You came!
-[User]: Of course I did! You’re racing, after all!
-[Python]: Thank you! I’m so happy I won the race! It’s nice to see hard work pay off.
+[User]: Of course I did! You're racing, after all!
+[Python]: Thank you! I'm so happy I won the race! It's nice to see hard work pay off.
 Choice:
 It is. It was amazing to see you run past all of the others! I was really worried at the start when you were behind, but I knew you could do it! Omega good job!
 I had fun watching! It was an exciting race.
-It’s nice. I thought the race was over at the start when you fell behind, but I guess fortunate events happen! Good job!
+It's nice. I thought the race was over at the start when you fell behind, but I guess fortunate events happen! Good job!
 Replies:
-It was really nerve-wrecking when I passed them! I’m glad it’s over.
+It was really nerve-wrecking when I passed them! I'm glad it's over.
 It was a close race indeed. Glad you had fun.
-I guess… It could have turned out differently on another day, I suppose.
-[Python]: Anyways, tomorrow’s the club fair! You’re coming to register for our club, right?
+I guess! It could have turned out differently on another day, I suppose.
+[Python]: Anyways, tomorrow's the club fair! You're coming to register for our club, right?
 [User]: Of course!
-[Python]: I hope you get in!!! It’s always fun to have a new person around!
+[Python]: I hope you get in!!! It's always fun to have a new person around!
 [Python]: Well, good luck tomorrow! I should get going.
-[User]: Okay! I’ll see you later!
+[User]: Okay! I'll see you later!
 
