@@ -106,12 +106,18 @@ public class DialogueController extends Menu implements Initializable{
 		Timeline timeline = new Timeline();
         timeline.getKeyFrames().add(new KeyFrame(Duration.ONE, e -> {
         	if(!dialogue.get(currentDialogue).equals("")) {
-        		if(dialogue.get(currentDialogue).equals("Choice:")) {
+        		if(dialogue.get(currentDialogue).contains("Choice:")) {
         			choiceBox.setDisable(false);
         			choiceBox.setOpacity(1);
         			choiceBox.toFront();
         			emptyKeyPressed(scrollyBoi);
-        			setChoicePress(in);
+        			if(dialogue.get(currentDialogue).contains("2")) {
+        				setChoicePress2(in);
+        			}else {
+            			setChoicePress3(in);
+        			}
+        			
+        			
         		}else {
         			try {
             			keyPressed(scrollyBoi, in);
@@ -135,7 +141,7 @@ public class DialogueController extends Menu implements Initializable{
 		choiceBox.toBack();
 	}
 	
-	public void setChoicePress(Scanner in) {
+	public void setChoicePress3(Scanner in) {
 		choice1Text.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
 			@Override
@@ -261,6 +267,93 @@ public class DialogueController extends Menu implements Initializable{
 						break;
 				}	
 			}
+		});
+	}
+	
+	public void setChoicePress3(Scanner in) {
+		choice1Text.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+			@Override
+			public void handle(MouseEvent event) {
+				switch(currentChar){
+					case "java":
+						GameManager.BIAS[1][0]++;
+						removeChoice();
+						keyPressed(scrollyBoi, in);
+						try {
+							slowPrint.autoFormat(responses[0], genericTextBox, scrollyBoi, 30, 90);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						break;
+					case "python":
+						GameManager.BIAS[0][0]++;
+						removeChoice();
+						keyPressed(scrollyBoi, in);
+						try {
+							slowPrint.autoFormat(responses[0], genericTextBox, scrollyBoi, 30, 90);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						break;
+					case "c":
+						GameManager.BIAS[2][0]++;
+						removeChoice();
+						keyPressed(scrollyBoi, in);
+						try {
+							slowPrint.autoFormat(responses[0], genericTextBox, scrollyBoi, 30, 90);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						break;
+				}
+				
+			}
+			
+		});
+		
+		choice2Text.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+			@Override
+			public void handle(MouseEvent event) {
+				switch(currentChar){
+					case "java":
+						removeChoice();
+						keyPressed(scrollyBoi, in);
+						try {
+							slowPrint.autoFormat(responses[1], genericTextBox, scrollyBoi, 30, 90);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						break;
+					case "python":
+						removeChoice();
+						keyPressed(scrollyBoi, in);
+						try {
+							slowPrint.autoFormat(responses[1], genericTextBox, scrollyBoi, 30, 90);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						break;
+					case "c":
+						removeChoice();
+						keyPressed(scrollyBoi, in);
+						try {
+							slowPrint.autoFormat(responses[1], genericTextBox, scrollyBoi, 30, 90);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						break;
+				}
+				
+			}
+			
 		});
 	}
 	
