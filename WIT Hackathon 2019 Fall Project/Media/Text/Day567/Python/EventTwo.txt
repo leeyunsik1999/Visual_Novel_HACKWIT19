@@ -1,0 +1,25 @@
+-School-
+[User]: The track club was fun. Let’s go there again!
+
+-Field-
+[Python]: Heeeeey, [User]!
+[User]: Oh, hi Python! Is it okay to not be with the group there? It looks like they’re doing something.
+[Python]: Yeah! I was just taking a little break. I saw you and was wondering if you wanted someone to show you around, you see! I totally didn’t want to slack off or anything...
+[User]: Heh, so that’s your real motive. No matter, I wanted to look around anyway, and having a club member show me around would be great.
+
+[Python]: … and this is the equipment room! We have tons of stuff that we don’t use, too. It’s more like our general storage.
+[User]: I see. What’s this (;)?
+[Python]: Oh, the semicolon. I don’t know, we never used it. I asked about it before, and from what I’ve been told, it’s pretty much useless. We use things like (:), or nothing, instead.
+
+Choice:
+I guess if there’s a way to not use it, that would be simpler. (+1)
+If nobody else is using it, might as well not use it. It could throw off new members who are used to using it though.. But they’ll get used to it, I guess. (0)
+I’m sure it has some uses! Just discarding it doesn’t sit right with me. (-1)
+
+Reply:
+[Python]: Yeah! It’s one less thing to learn about.
+[Python]: Yeah, we’ve had some new members be confused about that. They learned to deal with its absence pretty soon, though.
+[Python]: I guess everyone has their own preference.
+
+[Python]: Well, I better get going. I’ll see you around!
+[User]: Bye!

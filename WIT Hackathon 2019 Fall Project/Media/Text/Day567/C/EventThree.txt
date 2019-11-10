@@ -12,14 +12,14 @@
 [C]: The library is great for that. I’ve got to finish my work, too. There’s an assignment due tomorrow, but there’s a project that was assigned before that, so I’m in a rush to finish that first, you see.
 
 Choice:
-    Going through your work in order, I see. I try to do that too! It makes it easy to keep track of what I need to do next. (+1)
-    I see. That certainly is a good way to go through your work! I haven’t done that before, but maybe I should give it a try. (0)
-    Shouldn’t you work on the assignment that’s due tomorrow first? I feel like that’s more important. (-1)
+Going through your work in order, I see. I try to do that too! It makes it easy to keep track of what I need to do next. (+1)
+I see. That certainly is a good way to go through your work! I haven’t done that before, but maybe I should give it a try. (0)
+Shouldn’t you work on the assignment that’s due tomorrow first? I feel like that’s more important. (-1)
 
 Reply:
-    [C]: I’m glad someone understands! It does hold me up here and there, but it’s just easier overall for me.
-    [C]: Yeah, you should give it a shot. It’s nice once you get used to it.
-    [C]: Hey, it’s worked for me in the past… I’m sure i’ll pull through. Everyone has their own way of doing things, you know.
+[C]: I’m glad someone understands! It does hold me up here and there, but it’s just easier overall for me.
+[C]: Yeah, you should give it a shot. It’s nice once you get used to it.
+[C]: Hey, it’s worked for me in the past… I’m sure i’ll pull through. Everyone has their own way of doing things, you know.
 
 [User]: Well, I better get working. Good luck on your project!
 [C]: Thanks!

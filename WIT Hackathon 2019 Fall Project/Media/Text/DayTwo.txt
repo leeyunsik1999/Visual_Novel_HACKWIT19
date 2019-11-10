@@ -1,31 +1,31 @@
 Encounter with Python
 -In bedroom-
-[User:] Ok, first day, lots to do. I’m up thirty minutes early, but I may as well head in to school now, if I get lost at least I’ll have extra time to figure out where I am.
+[User:] Ok, first day, lots to do. I'm up thirty minutes early, but I may as well head in to school now, if I get lost at least I'll have extra time to figure out where I am.
 
 -Transition to school, track view-
 
-[User:] Oh, a field, and there are people running on it, looks like the track and field club? Maybe I should join them, wouldn’t be a bad idea to exercise
+[User:] Oh, a field, and there are people running on it, looks like the track and field club? Maybe I should join them, wouldn't be a bad idea to exercise
 
 -Python comes into view-
 
 [User]: The way that one is running, they have to be the captain or something.
-There’s something so elegant about how they run… it’s a simple act, yet they seem so efficient, with no wasted movement.
+There's something so elegant about how they run' it's a simple act, yet they seem so efficient, with no wasted movement.
 [User]: Oh crap, they caught me staring.
 [???]:  Heeeeeeeey!
 [User]: Oh, uh, hey!  
-You wave back clumsily. The runner leaps over hurdles with ease and you can’t help but to look on in awe for a moment.
+You wave back clumsily. The runner leaps over hurdles with ease and you can't help but to look on in awe for a moment.
 [User]: Maybe if I join the track team, I can be like that person as well? 
 
 -Transition to school-
 
-[User]: I was told that the student council president would show me around the school today, but I don’t see them anywhere… I wonder if it’ll happen tomorrow, it’ll be a pain to figure out where everything is on my own.
+[User]: I was told that the student council president would show me around the school today, but I don't see them anywhere' I wonder if it'll happen tomorrow, it'll be a pain to figure out where everything is on my own.
 
 -Transition to classroom
 
-[User]: There aren't many people here yet, maybe it’s because I got here early, but the track team was pretty early themselves too.
-[User]: This classroom is pretty big, looks like there’ll be a lot of people coming.
+[User]: There aren't many people here yet, maybe it's because I got here early, but the track team was pretty early themselves too.
+[User]: This classroom is pretty big, looks like there'll be a lot of people coming.
 
 -Transition to school- 
 
 [User]: Nothing eventful really happened today, but the track team seems like it might be fun to join. I was also told that the student council president shows the new students around, but I never got a chance to meet them.
-[User]: Oh well, I got around well enough today, I guess I’ll just go home.
+[User]: Oh well, I got around well enough today, I guess I'll just go home.

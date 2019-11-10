@@ -14,9 +14,9 @@
 [C]: Hmm… What do you suggest? I’ve had some ideas, but I want to know what you’re thinking.
 
 Choice:
-    Maybe show it as a collection of characters? You know, like an array! (+1)
-    Hmm… I don’t know, I’ll read the book and get back to you on that. (0)
-    I would go to the teacher and ask him to help with Strings. I’m not too familiar with it myself. (-1)
+Maybe show it as a collection of characters? You know, like an array! (+1)
+Hmm… I don’t know, I’ll read the book and get back to you on that. (0)
+I would go to the teacher and ask him to help with Strings. I’m not too familiar with it myself. (-1)
 
 [C]: I guess… I’ll try that. Well, here’s the book. I’m a part of the book club, so if you have any more ideas, you can come find me here.
 [User]: Thanks! I’ll give it a read.

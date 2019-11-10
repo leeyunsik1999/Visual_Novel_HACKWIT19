@@ -1,0 +1,27 @@
+-School-
+
+[User]: I’ll check out the track and field club!
+
+-Field-
+
+[User]: There’s a decent number of people here! I wonder what time the club starts at.
+[???]: Heeeey! Haven’t I seen you before?
+
+-Python enters-
+
+[Python]: I’m Python! Are you new around here?
+[User]: Yeah. I was looking for a club to join, and track looked like it’s not too hard to pick up.
+[Python]: It’s true, beginners can pick up the basics pretty quickly. Unlike that student council president, Java… They’re so obsessed with organizing things and having weird punctuations. We just go for it, unlike them, you know?
+
+Choice:
+Yeah, keeping things simple and straightforward is the best! Overly complicating things isn’t fun. (+1)
+It does make sense to keep everything cleaner, I guess. Organization has its uses from time to time, I feel like it’d be best if we could have both. (0)
+Organization makes everything so much easier, though! Simple is nice, but I feel like that’s not important. (-1)
+
+Reply:
+[Python]: I’m glad you see it that way! I believe there’s only one beautiful way to do one thing. There can be other methods, but what’s the point if they’re ugly and inefficient?
+[Python]: I still prefer the simplest way, but if having both helps you, that’s fine I guess.
+[Python]: Hey, simplicity makes it easy to learn you know. Overly complicating stuff will just confuse you in the end.
+
+[User]: Well, I’ll stick around for a bit longer. I think that person is calling you, Python.
+[Python]: Oh, yeah. I better get going. See you around!
